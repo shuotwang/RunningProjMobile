@@ -3,27 +3,53 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C023347F2300D771AE /* UserInfoTableViewController.swift */; };
+		BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C223348A9400D771AE /* NewTrialViewController.swift */; };
+		BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C4233493BA00D771AE /* TrialViewController.swift */; };
+		BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */; };
+		BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */; };
+		BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
-		BFF8727F233401DC0017016A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727E233401DC0017016A /* ViewController.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
 		BFF87287233401DE0017016A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF87286233401DE0017016A /* Assets.xcassets */; };
 		BFF8728A233401DE0017016A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87288233401DE0017016A /* LaunchScreen.storyboard */; };
+		BFF87292233445890017016A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF87291233445890017016A /* MainViewController.swift */; };
+		BFF872982334484A0017016A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872972334484A0017016A /* SettingsTableViewController.swift */; };
+		BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */; };
+		BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8729B233454180017016A /* SwitchTableViewCell.swift */; };
+		BFF872A223345F380017016A /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872A123345F380017016A /* UserListTableViewController.swift */; };
+		BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872A6233463BF0017016A /* RightEditTableViewCell.swift */; };
+		C18F826746836428AFF82F95 /* Pods_RunningiPhone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B869379EFCB07A38FD0B707 /* Pods_RunningiPhone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		119077ABBA89E8B9E9A8684F /* Pods-RunningiPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningiPhone.debug.xcconfig"; path = "Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone.debug.xcconfig"; sourceTree = "<group>"; };
+		1BECEAB44A8B60E9D3809829 /* Pods-RunningiPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningiPhone.release.xcconfig"; path = "Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone.release.xcconfig"; sourceTree = "<group>"; };
+		2B869379EFCB07A38FD0B707 /* Pods_RunningiPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningiPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF1D56C023347F2300D771AE /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
+		BF1D56C223348A9400D771AE /* NewTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrialViewController.swift; sourceTree = "<group>"; };
+		BF1D56C4233493BA00D771AE /* TrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialViewController.swift; sourceTree = "<group>"; };
+		BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
+		BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryTableViewCell.swift; sourceTree = "<group>"; };
+		BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFF8727E233401DC0017016A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFF87284233401DC0017016A /* RunningiPhone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunningiPhone.xcdatamodel; sourceTree = "<group>"; };
 		BFF87286233401DE0017016A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFF87289233401DE0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFF8728B233401DE0017016A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFF87291233445890017016A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BFF872972334484A0017016A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayTableViewCell.swift; sourceTree = "<group>"; };
+		BFF8729B233454180017016A /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		BFF872A123345F380017016A /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		BFF872A6233463BF0017016A /* RightEditTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightEditTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,47 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C18F826746836428AFF82F95 /* Pods_RunningiPhone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F01F3D35FCCDACC76187AF0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				119077ABBA89E8B9E9A8684F /* Pods-RunningiPhone.debug.xcconfig */,
+				1BECEAB44A8B60E9D3809829 /* Pods-RunningiPhone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9BEE97BCEA4FCCAEC2939997 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2B869379EFCB07A38FD0B707 /* Pods_RunningiPhone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF1D56C623349D5100D771AE /* Records */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */,
+				BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */,
+				BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */,
+			);
+			path = Records;
+			sourceTree = "<group>";
+		};
 		BFF87270233401DC0017016A = {
 			isa = PBXGroup;
 			children = (
 				BFF8727B233401DC0017016A /* RunningiPhone */,
 				BFF8727A233401DC0017016A /* Products */,
+				6F01F3D35FCCDACC76187AF0 /* Pods */,
+				9BEE97BCEA4FCCAEC2939997 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +113,63 @@
 			isa = PBXGroup;
 			children = (
 				BFF8727C233401DC0017016A /* AppDelegate.swift */,
-				BFF8727E233401DC0017016A /* ViewController.swift */,
+				BFF87291233445890017016A /* MainViewController.swift */,
 				BFF87280233401DC0017016A /* Main.storyboard */,
+				BFF87293233446D40017016A /* New Trial */,
+				BF1D56C623349D5100D771AE /* Records */,
+				BFF872962334482B0017016A /* Settings */,
 				BFF87286233401DE0017016A /* Assets.xcassets */,
 				BFF87288233401DE0017016A /* LaunchScreen.storyboard */,
 				BFF8728B233401DE0017016A /* Info.plist */,
 				BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */,
 			);
 			path = RunningiPhone;
+			sourceTree = "<group>";
+		};
+		BFF87293233446D40017016A /* New Trial */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D56C223348A9400D771AE /* NewTrialViewController.swift */,
+				BF1D56C4233493BA00D771AE /* TrialViewController.swift */,
+			);
+			path = "New Trial";
+			sourceTree = "<group>";
+		};
+		BFF872962334482B0017016A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BFF872972334484A0017016A /* SettingsTableViewController.swift */,
+				BFF8729D23345B550017016A /* User Info Detail */,
+				BFF872A32334609D0017016A /* Tibial Shock Change */,
+				BFF872A023345F290017016A /* User List */,
+				BFF8729B233454180017016A /* SwitchTableViewCell.swift */,
+				BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */,
+				BFF872A6233463BF0017016A /* RightEditTableViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		BFF8729D23345B550017016A /* User Info Detail */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D56C023347F2300D771AE /* UserInfoTableViewController.swift */,
+			);
+			path = "User Info Detail";
+			sourceTree = "<group>";
+		};
+		BFF872A023345F290017016A /* User List */ = {
+			isa = PBXGroup;
+			children = (
+				BFF872A123345F380017016A /* UserListTableViewController.swift */,
+			);
+			path = "User List";
+			sourceTree = "<group>";
+		};
+		BFF872A32334609D0017016A /* Tibial Shock Change */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Tibial Shock Change";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFF8728E233401DE0017016A /* Build configuration list for PBXNativeTarget "RunningiPhone" */;
 			buildPhases = (
+				F8794D9490F59D5C097BA505 /* [CP] Check Pods Manifest.lock */,
 				BFF87275233401DC0017016A /* Sources */,
 				BFF87276233401DC0017016A /* Frameworks */,
 				BFF87277233401DC0017016A /* Resources */,
+				32D977D5C118F1794B7583D0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +240,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		32D977D5C118F1794B7583D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8794D9490F59D5C097BA505 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RunningiPhone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BFF87275233401DC0017016A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFF8727F233401DC0017016A /* ViewController.swift in Sources */,
+				BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */,
+				BFF87292233445890017016A /* MainViewController.swift in Sources */,
+				BFF872982334484A0017016A /* SettingsTableViewController.swift in Sources */,
+				BFF872A223345F380017016A /* UserListTableViewController.swift in Sources */,
 				BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */,
+				BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */,
 				BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */,
+				BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */,
+				BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */,
+				BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */,
+				BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */,
+				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
+				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
+				BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +444,7 @@
 		};
 		BFF8728F233401DE0017016A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119077ABBA89E8B9E9A8684F /* Pods-RunningiPhone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,12 +457,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wst.RunningiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BFF87290233401DE0017016A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BECEAB44A8B60E9D3809829 /* Pods-RunningiPhone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = wst.RunningiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
