@@ -115,6 +115,13 @@
 			path = "Detail TableViewCell";
 			sourceTree = "<group>";
 		};
+		BF4A34992335F55E009FA99E /* Sensor Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Sensor Settings";
+			sourceTree = "<group>";
+		};
 		BFF87270233401DC0017016A = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +173,7 @@
 				BFF872972334484A0017016A /* SettingsTableViewController.swift */,
 				BFF8729D23345B550017016A /* User Info Detail */,
 				BFF872A32334609D0017016A /* Tibial Shock Change */,
+				BF4A34992335F55E009FA99E /* Sensor Settings */,
 				BFF872A023345F290017016A /* User List */,
 				BFF8729B233454180017016A /* SwitchTableViewCell.swift */,
 				BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */,

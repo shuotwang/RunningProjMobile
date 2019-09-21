@@ -21,7 +21,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -31,6 +31,8 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             return 44
         case 2:
+            return 44
+        case 3:
             return 44
         default:
             return 44
@@ -46,6 +48,8 @@ class SettingsTableViewController: UITableViewController {
             return 2
         case 2:
             return 1
+        case 3:
+            return 1
         default:
             return 0
         }
@@ -58,6 +62,8 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             return "System Settings"
         case 2:
+            return "Sensor Settings"
+        case 3:
             return "Switch User"
         default:
             return "Nothing"
@@ -97,6 +103,10 @@ class SettingsTableViewController: UITableViewController {
                 cell = audioFeedbackCell
             }
         case 2:
+            let accgyrCell = tableView.dequeueReusableCell(withIdentifier: "accgyrCell", for: indexPath) as! SwitchTableViewCell
+            accgyrCell.titleLabel.text = "Enable Gyroscope"
+            cell = accgyrCell
+        case 3:
             let changeUserCell = UITableViewCell()
             
             changeUserCell.accessoryType = .disclosureIndicator
@@ -144,9 +154,17 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Audio Feedback Switch
     @IBAction func audioSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            print("is on")
+            print("audio feedback is on")
         } else {
-            print("is off")
+            print("audio feedback is off")
+        }
+    }
+    
+    @IBAction func gyrSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            print("gyr is on")
+        } else {
+            print("gyr is off")
         }
     }
     
