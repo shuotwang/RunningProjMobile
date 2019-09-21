@@ -18,7 +18,29 @@ class RecordsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 150
+        case 1:
+            return 200
+        default:
+            return 0
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Summaries"
+        case 1:
+            return "Details"
+        default:
+            return "Nothing"
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
@@ -33,10 +55,10 @@ class RecordsTableViewController: UITableViewController {
         
         switch indexPath.section {
         case 0:
-            let summaryCell = tableView.dequeueReusableCell(withIdentifier: "recordsSummaryCell", for: indexPath)
+            let summaryCell = tableView.dequeueReusableCell(withIdentifier: "recordsSummaryCell", for: indexPath) as! RecordsSummaryTableViewCell
             cell = summaryCell
         case 1:
-            let detailCell = tableView.dequeueReusableCell(withIdentifier: "recordsDetailCell", for: indexPath)
+            let detailCell = tableView.dequeueReusableCell(withIdentifier: "recordsDetailCell", for: indexPath) as! RecordsDetailTableViewCell
             cell = detailCell
         default:
             break

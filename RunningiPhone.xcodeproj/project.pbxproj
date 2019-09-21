@@ -13,6 +13,8 @@
 		BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */; };
 		BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */; };
 		BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */; };
+		BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */; };
+		BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
@@ -37,6 +39,8 @@
 		BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
 		BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDetailTableViewCell.swift; sourceTree = "<group>"; };
+		BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRecordsDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,10 +89,28 @@
 			isa = PBXGroup;
 			children = (
 				BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */,
-				BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */,
-				BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */,
+				BF1D56CD2334A4E000D771AE /* Summary TableViewCell */,
+				BF1D56CE2334A4F800D771AE /* Detail TableViewCell */,
 			);
 			path = Records;
+			sourceTree = "<group>";
+		};
+		BF1D56CD2334A4E000D771AE /* Summary TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */,
+				BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */,
+			);
+			path = "Summary TableViewCell";
+			sourceTree = "<group>";
+		};
+		BF1D56CE2334A4F800D771AE /* Detail TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */,
+				BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */,
+			);
+			path = "Detail TableViewCell";
 			sourceTree = "<group>";
 		};
 		BFF87270233401DC0017016A = {
@@ -295,9 +317,11 @@
 				BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */,
 				BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */,
 				BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */,
+				BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */,
 				BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */,
 				BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */,
 				BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */,
+				BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */,
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
 				BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */,
