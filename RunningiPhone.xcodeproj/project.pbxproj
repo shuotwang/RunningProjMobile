@@ -15,6 +15,7 @@
 		BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */; };
 		BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */; };
 		BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */; };
+		BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 		BF1D56CB2334A15F00D771AE /* RecordsDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsDetailTableViewCell.swift; sourceTree = "<group>"; };
 		BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRecordsDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialSelectionViewController.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		BFF87293233446D40017016A /* New Trial */ = {
 			isa = PBXGroup;
 			children = (
+				BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */,
 				BF1D56C223348A9400D771AE /* NewTrialViewController.swift */,
 				BF1D56C4233493BA00D771AE /* TrialViewController.swift */,
 			);
@@ -324,6 +327,7 @@
 				BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */,
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
+				BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */,
 				BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

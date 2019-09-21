@@ -223,7 +223,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="pfs-DC-8pe" kind="relationship" relationship="viewControllers" id="wZS-Zf-Ib9"/>
+                        <segue destination="hFG-nu-Efr" kind="relationship" relationship="viewControllers" id="INH-k7-fZw"/>
                         <segue destination="i6T-B7-hFd" kind="relationship" relationship="viewControllers" id="A9g-zx-OnP"/>
                         <segue destination="ggg-xH-G3e" kind="relationship" relationship="viewControllers" id="F4W-G6-ClG"/>
                     </connections>
@@ -472,6 +472,92 @@
             </objects>
             <point key="canvasLocation" x="1208.6956521739132" y="-340.17857142857139"/>
         </scene>
+        <!--Trial Selection View Controller-->
+        <scene sceneID="BqC-HW-pB1">
+            <objects>
+                <viewController id="ERj-Ez-cJ1" customClass="TrialSelectionViewController" customModule="RunningiPhone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6RX-F4-A6I">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1B1-bW-rxQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ips-F5-kwt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="181.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOT-n0-XE0">
+                                        <rect key="frame" x="0.0" y="181.5" width="414" height="181"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-hs-l1i">
+                                                <rect key="frame" x="20" y="5" width="374" height="171"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <state key="normal" title="Baseline Test">
+                                                    <color key="titleColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="baselineTestBtnPressed:" destination="ERj-Ez-cJ1" eventType="touchUpInside" id="ojk-bO-xn1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="zP6-hs-l1i" firstAttribute="top" secondItem="wOT-n0-XE0" secondAttribute="top" constant="5" id="HIg-uO-yGV"/>
+                                            <constraint firstAttribute="trailing" secondItem="zP6-hs-l1i" secondAttribute="trailing" constant="20" id="Jhd-g0-f0G"/>
+                                            <constraint firstItem="zP6-hs-l1i" firstAttribute="leading" secondItem="wOT-n0-XE0" secondAttribute="leading" constant="20" id="UlS-1y-JnL"/>
+                                            <constraint firstAttribute="bottom" secondItem="zP6-hs-l1i" secondAttribute="bottom" constant="5" id="jXh-8e-C2D"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-R3-i4K">
+                                        <rect key="frame" x="0.0" y="362.5" width="414" height="181.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5u-hy-Zc0">
+                                                <rect key="frame" x="20" y="5" width="374" height="171.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <state key="normal" title="New Trial">
+                                                    <color key="titleColor" red="0.86274509799999999" green="0.7843137255" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="newTrialBtnPressed:" destination="ERj-Ez-cJ1" eventType="touchUpInside" id="f0a-Xb-ZgG"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="w5u-hy-Zc0" firstAttribute="leading" secondItem="8QU-R3-i4K" secondAttribute="leading" constant="20" id="PkV-kL-wGf"/>
+                                            <constraint firstAttribute="bottom" secondItem="w5u-hy-Zc0" secondAttribute="bottom" constant="5" id="UgN-Jf-ecO"/>
+                                            <constraint firstItem="w5u-hy-Zc0" firstAttribute="top" secondItem="8QU-R3-i4K" secondAttribute="top" constant="5" id="gQW-0x-dbb"/>
+                                            <constraint firstAttribute="trailing" secondItem="w5u-hy-Zc0" secondAttribute="trailing" constant="20" id="uhn-gQ-4QG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9P-WE-qvW">
+                                        <rect key="frame" x="0.0" y="544" width="414" height="181"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1B1-bW-rxQ" firstAttribute="leading" secondItem="SnB-7c-rPn" secondAttribute="leading" id="2S1-8d-h3E"/>
+                            <constraint firstItem="1B1-bW-rxQ" firstAttribute="top" secondItem="SnB-7c-rPn" secondAttribute="top" id="U3T-9r-8ig"/>
+                            <constraint firstItem="SnB-7c-rPn" firstAttribute="trailing" secondItem="1B1-bW-rxQ" secondAttribute="trailing" id="bDZ-qN-pc4"/>
+                            <constraint firstItem="SnB-7c-rPn" firstAttribute="bottom" secondItem="1B1-bW-rxQ" secondAttribute="bottom" id="oH2-Fx-eZZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="SnB-7c-rPn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="C9e-Uq-S68"/>
+                    <connections>
+                        <outlet property="baselineTestBtn" destination="zP6-hs-l1i" id="aDo-0K-ocJ"/>
+                        <outlet property="newTrialBtn" destination="w5u-hy-Zc0" id="Fub-2M-gdd"/>
+                        <segue destination="Q1p-jX-GPj" kind="show" identifier="toConnectSegue" id="8fy-mD-B78"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rMg-AW-5fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1286.9565217391305" y="-1071.4285714285713"/>
+        </scene>
         <!--New Trial Table View Controller-->
         <scene sceneID="RAj-oN-KV2">
             <objects>
@@ -502,7 +588,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-wv-U8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="-1068"/>
+            <point key="canvasLocation" x="2118.840579710145" y="-1068.0803571428571"/>
         </scene>
         <!--Trial View Controller-->
         <scene sceneID="XkU-RQ-iq6">
@@ -721,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odO-qi-x5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2029" y="-1066"/>
+            <point key="canvasLocation" x="2939.130434782609" y="-1066.0714285714284"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ZMG-JB-klA">
@@ -742,25 +828,6 @@
             </objects>
             <point key="canvasLocation" x="458" y="613"/>
         </scene>
-        <!--New Trial-->
-        <scene sceneID="Pd9-Pz-EEc">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pfs-DC-8pe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Trial" id="efb-Iy-BHz"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ru7-wZ-vuv">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Q1p-jX-GPj" kind="relationship" relationship="rootViewController" id="Stw-41-3VB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="s9N-D3-tzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="380" y="-1066"/>
-        </scene>
         <!--Records-->
         <scene sceneID="ljt-ej-CtV">
             <objects>
@@ -779,6 +846,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seK-oR-1R4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379.71014492753625" y="-340.17857142857139"/>
+        </scene>
+        <!--New Trial-->
+        <scene sceneID="46m-RP-LO4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hFG-nu-Efr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New Trial" id="szr-gI-faH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k3e-E4-EAd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ERj-Ez-cJ1" kind="relationship" relationship="rootViewController" id="ybd-lh-qoV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2z6-ok-hEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.81159420289856" y="-1071.4285714285713"/>
         </scene>
     </scenes>
 </document>

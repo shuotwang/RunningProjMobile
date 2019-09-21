@@ -10,10 +10,22 @@ import UIKit
 
 class NewTrialTableViewController: UITableViewController {
     
+    var trialType: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "New Trial"
+        if let type = self.trialType{
+            switch type {
+            case "baseline":
+                navigationItem.title = "Baseline Test"
+            case "new":
+                navigationItem.title = "New Trial"
+            default:
+                break
+            }
+        }
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refreshBtnPressed))
