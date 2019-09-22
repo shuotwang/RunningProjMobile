@@ -11,31 +11,83 @@ import UIKit
 class UserListTableViewController: UITableViewController {
     
     var selectedIdxPath: IndexPath?
+    
+    var users: [User]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Users"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBtnPressed))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.users = CoreDataHelper.shared.readAllUsers()
+    }
+    
+    @objc func addBtnPressed() {
+        var newVC = UIViewController()
+        if #available(iOS 13.0, *) {
+            newVC = storyboard?.instantiateViewController(identifier: "newUserVC") as! NewUserTableViewController
+        } else {
+            newVC = storyboard?.instantiateViewController(withIdentifier: "newUserVC") as! NewUserTableViewController
+        }
+        let newNav = UINavigationController.init(rootViewController: newVC)
+        present(newNav, animated: true, completion: nil)
     }
 
 
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        if let users = self.users{
+            return users.count
+        }
         return 0
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            if let users = self.users {
+                let userNum = users[indexPath.row].num
+                print(userNum)
+                CoreDataHelper.shared.deleteUserWith(num: userNum)
+                self.users?.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+            }
+        }
+    }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = UITableViewCell()
+        
+        if let users = self.users{
+            let currentUser = users[indexPath.row]
+            cell.textLabel?.text = currentUser.name
+            
+            if currentUser == g_currentUser{
+                cell.accessoryType = .checkmark
+            }
+        }
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let users = self.users{
+            g_currentUser = users[indexPath.row]
+            tableView.reloadData()
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

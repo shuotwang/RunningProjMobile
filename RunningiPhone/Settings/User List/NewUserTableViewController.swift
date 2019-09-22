@@ -1,40 +1,66 @@
 //
-//  UserInfoTableViewController.swift
+//  NewUserTableViewController.swift
 //  RunningiPhone
 //
-//  Created by Vincent on 2019/9/19.
+//  Created by Vincent on 2019/9/21.
 //  Copyright © 2019 Vincent. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Eureka
 
-class UserInfoTableViewController: FormViewController{
-    
+class NewUserTableViewController: FormViewController {
+
     let numberFormatter = NumberFormatter()
     let genders = ["Male", "Female"]
     
     override func viewDidLoad() {
+        
+        
+        print(CoreDataHelper.shared.readAllUsers())
+        
         super.viewDidLoad()
         self.setUserInfoUI()
         
-        self.navigationItem.title = "User Info"
+        self.navigationItem.title = "New User"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBtnPressed))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelBtnPressed))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveBtnPressed))
         
-        tableView.isUserInteractionEnabled = false
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 1
     }
     
-    @objc func editBtnPressed() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneBtnPressed))
-        tableView.isUserInteractionEnabled = true
+    @objc func cancelBtnPressed() {
+        dismiss(animated: true, completion: nil)
     }
     
-    @objc func doneBtnPressed() {
-        // TODO: save changes
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBtnPressed))
-        tableView.isUserInteractionEnabled = false
+    @objc func saveBtnPressed() {
+        let thisNum = Int64(Date().timeIntervalSince1970)
+        
+        let formvalues = self.form.values()
+        if let name = formvalues["Name"],
+            let gender = genders.firstIndex(of: (formvalues["Gender"] as! String)),
+            let height = formvalues["Height"],
+            let weight = formvalues["Weight"],
+            let birthday = formvalues["Birthday"]{
+            
+            if let name = name,
+                let height = height,
+                let weight = weight,
+                let birthday = birthday{
+                CoreDataHelper.shared.createUserWith(num: thisNum,
+                                                      name: name as! String,
+                                                      gender: Int64(gender),
+                                                      height: height as! Double,
+                                                      weight: weight as! Double,
+                                                      birthday: birthday as! Date)
+            }
+            
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -48,6 +74,7 @@ class UserInfoTableViewController: FormViewController{
                     //                    row.value = user?.name
                     
                 }
+                
                 <<< TextRow(){ row in
                     row.title = "Name"
                     row.tag = "Name"
@@ -95,4 +122,3 @@ class UserInfoTableViewController: FormViewController{
         }
     }
 }
-

@@ -9,12 +9,18 @@
 import UIKit
 
 class SettingsTableViewController: UITableViewController {
+    
+    var tibShockThres: Double = 8.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -69,6 +75,15 @@ class SettingsTableViewController: UITableViewController {
             return "Nothing"
         }
     }
+    
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 1:
+            return "Audio notification appears when tibial shock is higher than threshold."
+        default:
+            return ""
+        }
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,8 +94,15 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             let userCell = tableView.dequeueReusableCell(withIdentifier: "userDisplayCell", for: indexPath) as! UserDisplayTableViewCell
             
-            userCell.userName.text = "Someone"
-            userCell.userInfo.text = "Something"
+            if let currentUser = g_currentUser{
+                userCell.userName.text = currentUser.name
+                
+                // TODO: userInfo writes num of trials
+
+            }else {
+                userCell.userName.text = "Not Selected"
+                userCell.userInfo.text = "Please select a user"
+            }
             
             cell = userCell
         case 1:
@@ -88,10 +110,8 @@ class SettingsTableViewController: UITableViewController {
                 let tibShockCell = tableView.dequeueReusableCell(withIdentifier: "rightEditCell", for: indexPath) as! RightEditTableViewCell
                 
                 tibShockCell.titleLabel.text = "Tibial Shock Threshold"
-                
-                tibShockCell.rightTextField.text = "Something"
+                tibShockCell.rightTextField.text = "\(tibShockThres)"
 
-                
                 cell = tibShockCell
             }
             
@@ -121,19 +141,32 @@ class SettingsTableViewController: UITableViewController {
     }
     
     
-    
-//    userInfoDetailSegue
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            performSegue(withIdentifier: "userInfoSegue", sender: self)
+            if g_currentUser != nil{
+                performSegue(withIdentifier: "userInfoSegue", sender: self)
+            }else {
+                
+                tableView.deselectRow(at: indexPath, animated: true)
+                
+                let alert = UIAlertController(title: "User Not Selected", message: "Please select a user in 'Change User'.", preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    
+                }))
+                
+                self.present(alert, animated: true)
+            }
+            
         case 1:
             if indexPath.row == 0 {
                 
             }
         case 2:
-            performSegue(withIdentifier: "userInfoDetailSegue", sender: self)
+            break
+        case 3:
+            performSegue(withIdentifier: "userListSegue", sender: self)
         default:
             break
         }
@@ -144,10 +177,18 @@ class SettingsTableViewController: UITableViewController {
         switch segue.identifier {
         case "userInfoSegue":
             let newVC = segue.destination as! UserInfoTableViewController
-        case "userInfoDetailSegue":
+        case "userListSegue":
             let newVC = segue.destination as! UserListTableViewController
         default:
             break
+        }
+    }
+    
+    // MARK: = Tibshock Text field
+    @IBAction func tibShockInput(_ sender: UITextField) {
+        if let tibShock = sender.text{
+            self.tibShockThres = Double(tibShock) as! Double
+            tableView.reloadData()
         }
     }
     

@@ -16,6 +16,9 @@
 		BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */; };
 		BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */; };
 		BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */; };
+		BF573E1D23371B8E0033ADB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E1C23371B8E0033ADB5 /* CoreDataHelper.swift */; };
+		BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E24233733A10033ADB5 /* NewUserTableViewController.swift */; };
+		BF573E2723374A020033ADB5 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E2623374A020033ADB5 /* GlobalVariables.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
@@ -43,6 +46,9 @@
 		BF1D56CF2334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF1D56D12335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineChartRecordsDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialSelectionViewController.swift; sourceTree = "<group>"; };
+		BF573E1C23371B8E0033ADB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		BF573E24233733A10033ADB5 /* NewUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserTableViewController.swift; sourceTree = "<group>"; };
+		BF573E2623374A020033ADB5 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +128,24 @@
 			path = "Sensor Settings";
 			sourceTree = "<group>";
 		};
+		BF573E1B23371B760033ADB5 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				BF573E1C23371B8E0033ADB5 /* CoreDataHelper.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		BF573E21233730BE0033ADB5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BFF8729B233454180017016A /* SwitchTableViewCell.swift */,
+				BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */,
+				BFF872A6233463BF0017016A /* RightEditTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		BFF87270233401DC0017016A = {
 			isa = PBXGroup;
 			children = (
@@ -145,10 +169,12 @@
 			children = (
 				BFF8727C233401DC0017016A /* AppDelegate.swift */,
 				BFF87291233445890017016A /* MainViewController.swift */,
+				BF573E2623374A020033ADB5 /* GlobalVariables.swift */,
 				BFF87280233401DC0017016A /* Main.storyboard */,
 				BFF87293233446D40017016A /* New Trial */,
 				BF1D56C623349D5100D771AE /* Records */,
 				BFF872962334482B0017016A /* Settings */,
+				BF573E1B23371B760033ADB5 /* Core Data */,
 				BFF87286233401DE0017016A /* Assets.xcassets */,
 				BFF87288233401DE0017016A /* LaunchScreen.storyboard */,
 				BFF8728B233401DE0017016A /* Info.plist */,
@@ -175,9 +201,7 @@
 				BFF872A32334609D0017016A /* Tibial Shock Change */,
 				BF4A34992335F55E009FA99E /* Sensor Settings */,
 				BFF872A023345F290017016A /* User List */,
-				BFF8729B233454180017016A /* SwitchTableViewCell.swift */,
-				BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */,
-				BFF872A6233463BF0017016A /* RightEditTableViewCell.swift */,
+				BF573E21233730BE0033ADB5 /* Cells */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -194,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				BFF872A123345F380017016A /* UserListTableViewController.swift */,
+				BF573E24233733A10033ADB5 /* NewUserTableViewController.swift */,
 			);
 			path = "User List";
 			sourceTree = "<group>";
@@ -326,6 +351,7 @@
 				BFF872A223345F380017016A /* UserListTableViewController.swift in Sources */,
 				BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */,
 				BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */,
+				BF573E1D23371B8E0033ADB5 /* CoreDataHelper.swift in Sources */,
 				BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */,
 				BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */,
 				BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */,
@@ -333,9 +359,11 @@
 				BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */,
 				BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */,
 				BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */,
+				BF573E2723374A020033ADB5 /* GlobalVariables.swift in Sources */,
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
 				BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */,
+				BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */,
 				BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
