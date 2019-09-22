@@ -19,6 +19,13 @@
 		BF573E1D23371B8E0033ADB5 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E1C23371B8E0033ADB5 /* CoreDataHelper.swift */; };
 		BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E24233733A10033ADB5 /* NewUserTableViewController.swift */; };
 		BF573E2723374A020033ADB5 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E2623374A020033ADB5 /* GlobalVariables.swift */; };
+		BF573E2A2337EE5F0033ADB5 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E292337EE5F0033ADB5 /* SensorManager.swift */; };
+		BF573E2C2337EEC20033ADB5 /* PeripheralController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E2B2337EEC20033ADB5 /* PeripheralController.swift */; };
+		BF573E442337EF930033ADB5 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BF573E3C2337EF930033ADB5 /* MBProgressHUD.m */; };
+		BF573E452337EF930033ADB5 /* icon-580.png in Resources */ = {isa = PBXBuildFile; fileRef = BF573E3E2337EF930033ADB5 /* icon-580.png */; };
+		BF573E462337EF930033ADB5 /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = BF573E402337EF930033ADB5 /* cube.obj */; };
+		BF573E472337EF930033ADB5 /* DeviceRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF573E422337EF930033ADB5 /* DeviceRangeView.m */; };
+		BF573E482337EF930033ADB5 /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BF573E432337EF930033ADB5 /* cube.mtl */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
@@ -49,6 +56,17 @@
 		BF573E1C23371B8E0033ADB5 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		BF573E24233733A10033ADB5 /* NewUserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserTableViewController.swift; sourceTree = "<group>"; };
 		BF573E2623374A020033ADB5 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		BF573E292337EE5F0033ADB5 /* SensorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorManager.swift; sourceTree = "<group>"; };
+		BF573E2B2337EEC20033ADB5 /* PeripheralController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralController.swift; sourceTree = "<group>"; };
+		BF573E3C2337EF930033ADB5 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		BF573E3D2337EF930033ADB5 /* DeviceRangeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceRangeView.h; sourceTree = "<group>"; };
+		BF573E3E2337EF930033ADB5 /* icon-580.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-580.png"; sourceTree = "<group>"; };
+		BF573E3F2337EF930033ADB5 /* BluetoothDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluetoothDefines.h; sourceTree = "<group>"; };
+		BF573E402337EF930033ADB5 /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		BF573E412337EF930033ADB5 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		BF573E422337EF930033ADB5 /* DeviceRangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceRangeView.m; sourceTree = "<group>"; };
+		BF573E432337EF930033ADB5 /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
+		BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunningiPhone-Bridging-Header.h"; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -146,10 +164,36 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		BF573E282337EE480033ADB5 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				BF573E292337EE5F0033ADB5 /* SensorManager.swift */,
+				BF573E2B2337EEC20033ADB5 /* PeripheralController.swift */,
+			);
+			path = Connection;
+			sourceTree = "<group>";
+		};
+		BF573E3B2337EF930033ADB5 /* dialog */ = {
+			isa = PBXGroup;
+			children = (
+				BF573E3C2337EF930033ADB5 /* MBProgressHUD.m */,
+				BF573E3D2337EF930033ADB5 /* DeviceRangeView.h */,
+				BF573E3E2337EF930033ADB5 /* icon-580.png */,
+				BF573E3F2337EF930033ADB5 /* BluetoothDefines.h */,
+				BF573E402337EF930033ADB5 /* cube.obj */,
+				BF573E412337EF930033ADB5 /* MBProgressHUD.h */,
+				BF573E422337EF930033ADB5 /* DeviceRangeView.m */,
+				BF573E432337EF930033ADB5 /* cube.mtl */,
+			);
+			path = dialog;
+			sourceTree = "<group>";
+		};
 		BFF87270233401DC0017016A = {
 			isa = PBXGroup;
 			children = (
+				BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */,
 				BFF8727B233401DC0017016A /* RunningiPhone */,
+				BF573E3B2337EF930033ADB5 /* dialog */,
 				BFF8727A233401DC0017016A /* Products */,
 				6F01F3D35FCCDACC76187AF0 /* Pods */,
 				9BEE97BCEA4FCCAEC2939997 /* Frameworks */,
@@ -175,6 +219,7 @@
 				BF1D56C623349D5100D771AE /* Records */,
 				BFF872962334482B0017016A /* Settings */,
 				BF573E1B23371B760033ADB5 /* Core Data */,
+				BF573E282337EE480033ADB5 /* Connection */,
 				BFF87286233401DE0017016A /* Assets.xcassets */,
 				BFF87288233401DE0017016A /* LaunchScreen.storyboard */,
 				BFF8728B233401DE0017016A /* Info.plist */,
@@ -290,8 +335,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF573E482337EF930033ADB5 /* cube.mtl in Resources */,
 				BFF8728A233401DE0017016A /* LaunchScreen.storyboard in Resources */,
+				BF573E462337EF930033ADB5 /* cube.obj in Resources */,
 				BFF87287233401DE0017016A /* Assets.xcassets in Resources */,
+				BF573E452337EF930033ADB5 /* icon-580.png in Resources */,
 				BFF87282233401DC0017016A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,13 +395,16 @@
 			files = (
 				BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */,
 				BFF87292233445890017016A /* MainViewController.swift in Sources */,
+				BF573E442337EF930033ADB5 /* MBProgressHUD.m in Sources */,
 				BFF872982334484A0017016A /* SettingsTableViewController.swift in Sources */,
+				BF573E472337EF930033ADB5 /* DeviceRangeView.m in Sources */,
 				BFF872A223345F380017016A /* UserListTableViewController.swift in Sources */,
 				BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */,
 				BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */,
 				BF573E1D23371B8E0033ADB5 /* CoreDataHelper.swift in Sources */,
 				BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */,
 				BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */,
+				BF573E2C2337EEC20033ADB5 /* PeripheralController.swift in Sources */,
 				BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */,
 				BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */,
 				BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */,
@@ -361,6 +412,7 @@
 				BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */,
 				BF573E2723374A020033ADB5 /* GlobalVariables.swift in Sources */,
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
+				BF573E2A2337EE5F0033ADB5 /* SensorManager.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
 				BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */,
 				BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */,
@@ -520,6 +572,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wst.RunningiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Vincent/Google 云端硬盘/App Test/RunningiPhone/RunningiPhone-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -539,6 +592,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = wst.RunningiPhone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Vincent/Google 云端硬盘/App Test/RunningiPhone/RunningiPhone-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
