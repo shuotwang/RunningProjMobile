@@ -12,13 +12,15 @@ import UIKit
 
 class RecordsSummaryTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var summaryCollectionView: UICollectionView!
+    var records = [Record]()
     
-//    var summaries:
+    let dateFormatter = DateFormatter()
+    
+    @IBOutlet weak var summaryCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.dateFormatter.dateFormat = "MMM dd, yyyy HH:mm"
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,12 +34,21 @@ class RecordsSummaryTableViewCell: UITableViewCell {
 extension RecordsSummaryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return records.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var summaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "summaryCollectionCell", for: indexPath)
+        let currentRecord = records[records.count - 1 - indexPath.row]
+        
+        let summaryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "summaryCollectionCell", for: indexPath) as! RecordsSummaryCollectionViewCell
+        summaryCell.dateLabel.text = dateFormatter.string(from: currentRecord.time!)
+        summaryCell.durationLabel.text = "\(currentRecord.duration/60):\(currentRecord.duration%60)"
+        if currentRecord.type == "baseline"{
+            summaryCell.typeLabel.text = "Baseline Test"
+        }else{
+            summaryCell.typeLabel.text = "Training Trial"
+        }
         
         return summaryCell
         

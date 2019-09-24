@@ -102,11 +102,16 @@ extension TrialViewController{
     @objc func runningTimerAction() {
         time = time + 1
         
+        let minuteTime = time / 60
+        let secondTime = time % 60
+        self.timeLabel.text = String(format: "%02d", minuteTime) + ":" + String(format: "%02d", secondTime)
     }
     
     @IBAction func finishBtnPressed(_ sender: Any) {
         
         timer.invalidate()
+        periController.stopSensorRead()
+        DataCollector.shared.stopSensorRead()
         
         let alert = UIAlertController(title: "Save Records?", message: "Are you sure to save record?", preferredStyle: .alert)
         

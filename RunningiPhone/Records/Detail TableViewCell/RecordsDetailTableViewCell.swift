@@ -12,6 +12,8 @@ import UIKit
 
 class RecordsDetailTableViewCell: UITableViewCell {
     
+    var record = Record()
+    
     @IBOutlet weak var detailCollectionView: UICollectionView!
     
     override func awakeFromNib() {
