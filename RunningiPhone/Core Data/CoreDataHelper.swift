@@ -125,7 +125,7 @@ extension CoreDataHelper {
                           gyrX: [Double],
                           gyrY: [Double],
                           gyrZ: [Double],
-                          tibShock: [Double: Double]){
+                          tibShock: [[Double: Double]]){
         let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: context) as! Record
         
         record.userNum = userNum

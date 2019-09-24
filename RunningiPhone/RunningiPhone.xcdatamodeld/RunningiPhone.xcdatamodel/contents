@@ -10,7 +10,7 @@
         <attribute name="gyrY" optional="YES" attributeType="Transformable" customClassName="[Double]"/>
         <attribute name="gyrZ" optional="YES" attributeType="Transformable" customClassName="[Double]"/>
         <attribute name="recordNum" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="tibShock" optional="YES" attributeType="Transformable" customClassName="[Double:Double]"/>
+        <attribute name="tibShock" optional="YES" attributeType="Transformable" customClassName="[[Double:Double]]"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="userNum" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

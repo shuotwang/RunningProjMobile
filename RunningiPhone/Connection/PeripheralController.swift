@@ -26,7 +26,7 @@ class PeripheralController: NSObject, CBPeripheralDelegate {
     var gyroscopeSensitivity = 16.4
     var accelerometerSensitivity = 2048.0
 
-//    var sensorDataManager: SensorDataManager?
+    var sensorDataManager: SensorDataManager?
     
     let GYROSCOPE_SENSITIVITY = [16.4, 32.8, 65.6, 131.2, 262.4]
     let GYROSCOPE_RATES = [0.78, 1.56, 3.12, 6.25, 12.5, 25.0, 50.0, 100.0]
@@ -34,7 +34,7 @@ class PeripheralController: NSObject, CBPeripheralDelegate {
     
     init(peripheral: CBPeripheral) {
         self.peripheral = peripheral
-//        sensorDataManager = SensorDataManager(peripheral: peripheral)
+        sensorDataManager = SensorDataManager(peripheral: peripheral)
     }
     
     func discoverService() {

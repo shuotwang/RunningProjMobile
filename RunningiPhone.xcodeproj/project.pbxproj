@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C023347F2300D771AE /* UserInfoTableViewController.swift */; };
-		BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C223348A9400D771AE /* NewTrialViewController.swift */; };
+		BF1D56C323348A9400D771AE /* NewTrialTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */; };
 		BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C4233493BA00D771AE /* TrialViewController.swift */; };
 		BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */; };
 		BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */; };
@@ -26,6 +26,12 @@
 		BF573E462337EF930033ADB5 /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = BF573E402337EF930033ADB5 /* cube.obj */; };
 		BF573E472337EF930033ADB5 /* DeviceRangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF573E422337EF930033ADB5 /* DeviceRangeView.m */; };
 		BF573E482337EF930033ADB5 /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = BF573E432337EF930033ADB5 /* cube.mtl */; };
+		BF573E4B2337F2480033ADB5 /* SensorDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E4A2337F2480033ADB5 /* SensorDataManager.swift */; };
+		BF573E4D2337F4F60033ADB5 /* DataCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E4C2337F4F60033ADB5 /* DataCollector.swift */; };
+		BF573E4F23386F310033ADB5 /* DataCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E4E23386F310033ADB5 /* DataCalculator.swift */; };
+		BF573E5123387FDE0033ADB5 /* FindPeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E5023387FDE0033ADB5 /* FindPeak.swift */; };
+		BF573E53233881230033ADB5 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E52233881230033ADB5 /* NeuralNetwork.swift */; };
+		BFE482F02339D690004FFBD1 /* DataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE482EF2339D690004FFBD1 /* DataSaver.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
@@ -45,7 +51,7 @@
 		1BECEAB44A8B60E9D3809829 /* Pods-RunningiPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RunningiPhone.release.xcconfig"; path = "Target Support Files/Pods-RunningiPhone/Pods-RunningiPhone.release.xcconfig"; sourceTree = "<group>"; };
 		2B869379EFCB07A38FD0B707 /* Pods_RunningiPhone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RunningiPhone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1D56C023347F2300D771AE /* UserInfoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoTableViewController.swift; sourceTree = "<group>"; };
-		BF1D56C223348A9400D771AE /* NewTrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrialViewController.swift; sourceTree = "<group>"; };
+		BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTrialTableViewController.swift; sourceTree = "<group>"; };
 		BF1D56C4233493BA00D771AE /* TrialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialViewController.swift; sourceTree = "<group>"; };
 		BF1D56C72334A05200D771AE /* RecordsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsTableViewController.swift; sourceTree = "<group>"; };
 		BF1D56C92334A08200D771AE /* RecordsSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsSummaryTableViewCell.swift; sourceTree = "<group>"; };
@@ -67,6 +73,12 @@
 		BF573E422337EF930033ADB5 /* DeviceRangeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceRangeView.m; sourceTree = "<group>"; };
 		BF573E432337EF930033ADB5 /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
 		BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RunningiPhone-Bridging-Header.h"; sourceTree = "<group>"; };
+		BF573E4A2337F2480033ADB5 /* SensorDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataManager.swift; sourceTree = "<group>"; };
+		BF573E4C2337F4F60033ADB5 /* DataCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollector.swift; sourceTree = "<group>"; };
+		BF573E4E23386F310033ADB5 /* DataCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCalculator.swift; sourceTree = "<group>"; };
+		BF573E5023387FDE0033ADB5 /* FindPeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPeak.swift; sourceTree = "<group>"; };
+		BF573E52233881230033ADB5 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		BFE482EF2339D690004FFBD1 /* DataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSaver.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF87281233401DC0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,11 +181,17 @@
 			children = (
 				BF573E292337EE5F0033ADB5 /* SensorManager.swift */,
 				BF573E2B2337EEC20033ADB5 /* PeripheralController.swift */,
+				BF573E4A2337F2480033ADB5 /* SensorDataManager.swift */,
+				BF573E4C2337F4F60033ADB5 /* DataCollector.swift */,
+				BF573E4E23386F310033ADB5 /* DataCalculator.swift */,
+				BFE482EF2339D690004FFBD1 /* DataSaver.swift */,
+				BF573E5023387FDE0033ADB5 /* FindPeak.swift */,
+				BF573E52233881230033ADB5 /* NeuralNetwork.swift */,
 			);
 			path = Connection;
 			sourceTree = "<group>";
 		};
-		BF573E3B2337EF930033ADB5 /* dialog */ = {
+		BF573E3B2337EF930033ADB5 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
 				BF573E3C2337EF930033ADB5 /* MBProgressHUD.m */,
@@ -185,7 +203,7 @@
 				BF573E422337EF930033ADB5 /* DeviceRangeView.m */,
 				BF573E432337EF930033ADB5 /* cube.mtl */,
 			);
-			path = dialog;
+			path = Dialog;
 			sourceTree = "<group>";
 		};
 		BFF87270233401DC0017016A = {
@@ -193,7 +211,7 @@
 			children = (
 				BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */,
 				BFF8727B233401DC0017016A /* RunningiPhone */,
-				BF573E3B2337EF930033ADB5 /* dialog */,
+				BF573E3B2337EF930033ADB5 /* Dialog */,
 				BFF8727A233401DC0017016A /* Products */,
 				6F01F3D35FCCDACC76187AF0 /* Pods */,
 				9BEE97BCEA4FCCAEC2939997 /* Frameworks */,
@@ -232,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */,
-				BF1D56C223348A9400D771AE /* NewTrialViewController.swift */,
+				BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */,
 				BF1D56C4233493BA00D771AE /* TrialViewController.swift */,
 			);
 			path = "New Trial";
@@ -400,12 +418,15 @@
 				BF573E472337EF930033ADB5 /* DeviceRangeView.m in Sources */,
 				BFF872A223345F380017016A /* UserListTableViewController.swift in Sources */,
 				BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */,
-				BF1D56C323348A9400D771AE /* NewTrialViewController.swift in Sources */,
+				BF1D56C323348A9400D771AE /* NewTrialTableViewController.swift in Sources */,
 				BF573E1D23371B8E0033ADB5 /* CoreDataHelper.swift in Sources */,
+				BFE482F02339D690004FFBD1 /* DataSaver.swift in Sources */,
 				BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */,
 				BFF872A7233463BF0017016A /* RightEditTableViewCell.swift in Sources */,
+				BF573E5123387FDE0033ADB5 /* FindPeak.swift in Sources */,
 				BF573E2C2337EEC20033ADB5 /* PeripheralController.swift in Sources */,
 				BF1D56D02334A7EB00D771AE /* RecordsSummaryCollectionViewCell.swift in Sources */,
+				BF573E53233881230033ADB5 /* NeuralNetwork.swift in Sources */,
 				BF1D56C5233493BA00D771AE /* TrialViewController.swift in Sources */,
 				BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */,
 				BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */,
@@ -414,8 +435,11 @@
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF573E2A2337EE5F0033ADB5 /* SensorManager.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
+				BF573E4F23386F310033ADB5 /* DataCalculator.swift in Sources */,
 				BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */,
 				BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */,
+				BF573E4D2337F4F60033ADB5 /* DataCollector.swift in Sources */,
+				BF573E4B2337F2480033ADB5 /* SensorDataManager.swift in Sources */,
 				BF1D56CA2334A08200D771AE /* RecordsSummaryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
