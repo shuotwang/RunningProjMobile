@@ -22,6 +22,23 @@ class TrialSelectionViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.view.isUserInteractionEnabled = false
+        self.view.alpha = 0.4
+        let curUser = UserDefaults.standard.integer(forKey: "curUser")
+        if curUser == 0{
+            let alert = UIAlertController(title: "No User Selected", message: "Please select user at Settings → Switch User", preferredStyle: .alert)
+                   
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }else{
+            self.view.isUserInteractionEnabled = true
+            self.view.alpha = 1
+        }
+    }
+    
     @IBAction func baselineTestBtnPressed(_ sender: Any) {
         let type = "baseline"
         performSegue(withIdentifier: "toConnectSegue", sender: type)
@@ -41,5 +58,4 @@ class TrialSelectionViewController: UIViewController {
             break
         }
     }
-    
 }

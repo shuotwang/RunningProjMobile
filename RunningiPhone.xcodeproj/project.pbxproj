@@ -37,7 +37,6 @@
 		BFF87285233401DC0017016A /* RunningiPhone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFF87283233401DC0017016A /* RunningiPhone.xcdatamodeld */; };
 		BFF87287233401DE0017016A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF87286233401DE0017016A /* Assets.xcassets */; };
 		BFF8728A233401DE0017016A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87288233401DE0017016A /* LaunchScreen.storyboard */; };
-		BFF87292233445890017016A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF87291233445890017016A /* MainViewController.swift */; };
 		BFF872982334484A0017016A /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872972334484A0017016A /* SettingsTableViewController.swift */; };
 		BFF8729A2334498B0017016A /* UserDisplayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */; };
 		BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8729B233454180017016A /* SwitchTableViewCell.swift */; };
@@ -86,7 +85,6 @@
 		BFF87286233401DE0017016A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFF87289233401DE0017016A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFF8728B233401DE0017016A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BFF87291233445890017016A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BFF872972334484A0017016A /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		BFF872992334498B0017016A /* UserDisplayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDisplayTableViewCell.swift; sourceTree = "<group>"; };
 		BFF8729B233454180017016A /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				BFF8727C233401DC0017016A /* AppDelegate.swift */,
-				BFF87291233445890017016A /* MainViewController.swift */,
 				BF573E2623374A020033ADB5 /* GlobalVariables.swift */,
 				BFF87280233401DC0017016A /* Main.storyboard */,
 				BFF87293233446D40017016A /* New Trial */,
@@ -412,7 +409,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF1D56C82334A05200D771AE /* RecordsTableViewController.swift in Sources */,
-				BFF87292233445890017016A /* MainViewController.swift in Sources */,
 				BF573E442337EF930033ADB5 /* MBProgressHUD.m in Sources */,
 				BFF872982334484A0017016A /* SettingsTableViewController.swift in Sources */,
 				BF573E472337EF930033ADB5 /* DeviceRangeView.m in Sources */,

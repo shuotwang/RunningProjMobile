@@ -22,13 +22,6 @@ class LineChartRecordsDetailCollectionViewCell: UICollectionViewCell {
         
         dataEntry = [ChartDataEntry]()
         
-        //        for index in 0...inputData.count - 1{
-        //            let item  = inputData[index]
-        //            if !item.isNaN && !item.isInfinite {
-        //                let entry = ChartDataEntry(x: Double(index), y: item)
-        //                dataEntry.append(entry)
-        //            }
-        //        }
         if let input = inputEntry{
             dataEntry = input
         }
@@ -37,17 +30,24 @@ class LineChartRecordsDetailCollectionViewCell: UICollectionViewCell {
         lineChartView.animate(xAxisDuration: 0.7)
         
         updateChart()
+        
+        backgroundColor = darkDarkGray
+        self.lineChartView.backgroundColor = darkDarkGray
+        self.lineChartView.gridBackgroundColor = darkDarkGray
     }
     
     override func awakeFromNib() {
         
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
         
         // Set diagram UI
+        backgroundColor = UIColor(red: 31, green: 33, blue: 36, alpha: 1)
+        lineChartView.backgroundColor = UIColor(red: 31, green: 33, blue: 36, alpha: 1)
         lineChartView.rightAxis.enabled = false
         
         // Back ground
         lineChartView.drawGridBackgroundEnabled = true
+        
         
         // Legend
         //        lineChartView.legend.textColor = .lightGray

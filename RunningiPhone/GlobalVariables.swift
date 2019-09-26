@@ -16,6 +16,8 @@ var g_peripheral: CBPeripheral?
 var g_periController: PeripheralController?
 var g_startingTime: Date?
 
+let darkDarkGray = UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1)
+
 struct AccData {
     var milliStamp: Double
     var accX: Double

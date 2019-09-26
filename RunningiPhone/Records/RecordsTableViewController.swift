@@ -11,6 +11,8 @@ import UIKit
 class RecordsTableViewController: UITableViewController {
     
     var records: [Record]?
+    
+    var selectedRecordIdx: Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,7 @@ class RecordsTableViewController: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("view will appear")
         if let user = g_currentUser{
             records = CoreDataHelper.shared.findRecordsWith(userNum: user.num)
         }
@@ -68,15 +71,31 @@ class RecordsTableViewController: UITableViewController {
             let summaryCell = tableView.dequeueReusableCell(withIdentifier: "recordsSummaryCell", for: indexPath) as! RecordsSummaryTableViewCell
             if let records = self.records{
                 summaryCell.records = records
+                summaryCell.summaryCollectionView.reloadData()
             }
+            summaryCell.recordsSummaryDelegate = self
             cell = summaryCell
         case 1:
             let detailCell = tableView.dequeueReusableCell(withIdentifier: "recordsDetailCell", for: indexPath) as! RecordsDetailTableViewCell
+            
+            if let index = self.selectedRecordIdx,
+                let records = self.records{
+                detailCell.record = records[index]
+                detailCell.detailCollectionView.reloadData()
+            }
+            
             cell = detailCell
         default:
             break
         }
 
         return cell
+    }
+}
+
+extension RecordsTableViewController: RecordsSummaryDelegate {
+    func passRecordIdx(index: Int) {
+        self.selectedRecordIdx = index
+        self.tableView.reloadData()
     }
 }

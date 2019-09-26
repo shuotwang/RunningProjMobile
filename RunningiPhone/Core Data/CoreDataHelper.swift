@@ -119,13 +119,17 @@ extension CoreDataHelper {
                           time: Date,
                           duration: Int64,
                           type: String,
+                          accTimeStamp: [Double],
                           accX: [Double],
                           accY: [Double],
                           accZ: [Double],
+                          gyrTimeStamp: [Double],
                           gyrX: [Double],
                           gyrY: [Double],
                           gyrZ: [Double],
-                          tibShock: [[Double: Double]]){
+                          tibShock: [Double],
+                          tibShockPos: [Double],
+                          cadence: [Int]){
         let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: context) as! Record
         
         record.userNum = userNum
@@ -134,13 +138,19 @@ extension CoreDataHelper {
         record.duration = duration
         record.type = type
         
+        record.accTimeStamp = accTimeStamp
         record.accX = accX
         record.accY = accY
         record.accZ = accZ
+        
+        record.gyrTimeStamp = gyrTimeStamp
         record.gyrX = gyrX
         record.gyrY = gyrY
         record.gyrZ = gyrZ
+        
         record.tibShock = tibShock
+        record.tibShockPos = tibShockPos
+        record.cadence = cadence
         
         saveContext()
     }

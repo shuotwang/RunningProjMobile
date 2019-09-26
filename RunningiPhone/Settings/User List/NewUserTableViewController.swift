@@ -9,13 +9,18 @@
 import UIKit
 import Eureka
 
+protocol NewUserDelegate {
+    func saveBtnPressed()
+}
+
 class NewUserTableViewController: FormViewController {
 
     let numberFormatter = NumberFormatter()
     let genders = ["Male", "Female"]
     
+    var newUserDelegate: NewUserDelegate?
+    
     override func viewDidLoad() {
-        
         
         print(CoreDataHelper.shared.readAllUsers())
         
@@ -60,6 +65,8 @@ class NewUserTableViewController: FormViewController {
             
         }
         
+        self.newUserDelegate?.saveBtnPressed()
+        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -68,7 +75,7 @@ class NewUserTableViewController: FormViewController {
         UIView.performWithoutAnimation {
             form +++ Section("Personal Info")
                 
-                <<< TextRow(){ row in
+                <<< DecimalRow(){ row in
                     row.title = "Subject Number"
                     row.tag = "subNum"
                     //                    row.value = user?.name

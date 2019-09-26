@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let curUserNum = UserDefaults.standard.integer(forKey: "curUser")
+        if curUserNum != 0{
+            let curUser = CoreDataHelper.shared.findUserWith(num: curUserNum)
+            g_currentUser = curUser
+        }
+        
         return true
     }
 

@@ -18,8 +18,19 @@ class RecordsSummaryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
     }
-
     
+    func dimView() {
+        UIView.animate(withDuration: 0) {
+            self.contentView.alpha = 0.4
+        }
+    }
     
+    func brightenView() {
+        UIView.animate(withDuration: 0.2) {
+            self.contentView.alpha = 1
+        }
+    }
 }

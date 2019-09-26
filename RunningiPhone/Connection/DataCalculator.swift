@@ -17,89 +17,93 @@ class DataCalculator {
     
     static let shared = DataCalculator()
     
-    var accTimeStamp1 = [Double]()
-    var accTimeStamp2 = [Double]()
-    
-    var accXs1 = [Double]()
-    var accXs2 = [Double]()
-    
     var dataCalculatorDelegate: DataCalculatorDelegate?
     
     func receiveAccData(accTimeStamp: [Double], accXs: [Double], accYs: [Double], accZs: [Double]) {
         
-        var currentAccTimeStamp = [Double]()
-        currentAccTimeStamp.append(contentsOf: accTimeStamp1)
-        currentAccTimeStamp.append(contentsOf: accTimeStamp2)
-        currentAccTimeStamp.append(contentsOf: accTimeStamp)
-        
         var duration = Double()
-        if currentAccTimeStamp.count > 0{
-            duration = currentAccTimeStamp[currentAccTimeStamp.count - 1] - currentAccTimeStamp[0]
+        if accTimeStamp.count > 0{
+            duration = accTimeStamp[accTimeStamp.count - 1] - accTimeStamp[0]
         }
-
-        var curAccXs = [Double]()
-        curAccXs.append(contentsOf: accXs1)
-        curAccXs.append(contentsOf: accXs2)
-        curAccXs.append(contentsOf: accXs)
         
-        let dataRate = Double(curAccXs.count) / duration
+        let dataRate = Double(accXs.count) / duration
         
-        let (tibShock, cadence, tsRecord) = calTsCad(timeStamps: currentAccTimeStamp, data: curAccXs, dataRate: dataRate, duration: duration)
+        let (tsRecord, tsPosRecord) = calTsPerSec(timeStamps: accTimeStamp, data: accXs, dataRate: dataRate)
         
-        accTimeStamp1 = accTimeStamp2
-        accTimeStamp2 = accTimeStamp
-        
-        accXs1 = accXs2
-        accXs2 = accXs
-        
-        dataCalculatorDelegate?.passTsCad(tibShock: tibShock, cadence: cadence)
+        calAveTsCad(tsRecord: tsRecord, tsPosRecord: tsPosRecord)
         
         // save data every time this func is called
-        DataSaver.shared.saveData(accTimeStamp: accTimeStamp, tsRecord: tsRecord, cadRecord: [cadence], accXs: accXs, accYs: accYs, accZs: accZs)
+        DataSaver.shared.saveData(accTimeStamp: accTimeStamp, tsRecord: tsRecord, tsPosRecord: tsPosRecord, accXs: accXs, accYs: accYs, accZs: accZs)
     }
     
     func receiveGyrData(gyrTimeStamp: [Double], gyrXs: [Double], gyrYs: [Double], gyrZs: [Double]) {
         DataSaver.shared.saveDataWithGyr(gyrTimeStamp: gyrTimeStamp, gyrXs: gyrXs, gyrYs: gyrYs, gyrZs: gyrZs)
     }
     
-    func calTsCad(timeStamps: [Double], data: [Double], dataRate: Double, duration: Double) -> (Double, Int, [[Double: Double]]) {
-        
-        var tsRecord = [[Double: Double]]()
-        
-        // Cadence: count the intervals, rather than peaks
+    func calTsPerSec(timeStamps: [Double], data: [Double], dataRate: Double) -> ([Double], [Double]) {
+        var tsRecord = [Double]()
+        var tsPosRecord = [Double]()
 
         let tibShockPos = FindPeak.getTibShock(data: data, dataRate: dataRate)
         let tibShocks = tibShockPos.map { data[$0] }
-        let tibShock = Surge.sum(tibShocks) / Double(tibShocks.count)
         
+        // tibShock
+        if tibShockPos.count > 0 {
+            for i in 0..<tibShockPos.count{
+                let idx = tibShockPos[i]
+                tsPosRecord.append(timeStamps[idx])
+                tsRecord.append(tibShocks[i])
+            }
+        }
+        return (tsRecord, tsPosRecord)
+    }
+    
+    
+    
+    
+    var tsRecord1 = [Double]()
+    var tsRecord2 = [Double]()
+    var tsPosRecord1 = [Double]()
+    var tsPosRecord2 = [Double]()
+    
+    func calAveTsCad(tsRecord: [Double], tsPosRecord: [Double]){
+        var currentTsRecord = [Double]()
+        currentTsRecord.append(contentsOf: tsRecord1)
+        currentTsRecord.append(contentsOf: tsRecord2)
+        currentTsRecord.append(contentsOf: tsRecord)
+        
+        var currentTsPosRecord = [Double]()
+        currentTsPosRecord.append(contentsOf: tsPosRecord1)
+        currentTsPosRecord.append(contentsOf: tsPosRecord2)
+        currentTsPosRecord.append(contentsOf: tsPosRecord)
+        
+        // Tibial Shock (per second)
+        let aveTs = Surge.sum(tsRecord) / Double(tsRecord.count)
+        
+        // Cadence (per 3 seconds)
         var cadence = 0
         
-        if tibShockPos.count > 0 {
-            let startTime = timeStamps[tibShockPos[0]]
-            let endTime = timeStamps[tibShockPos[tibShockPos.count - 1]]
-            let dur = endTime - startTime
+        if currentTsPosRecord.count > 0 {
+            let dur = currentTsPosRecord[currentTsPosRecord.count - 1] - currentTsPosRecord[0]
             
-            let cad = Double(tibShocks.count - 1) * 60 / dur * 2
+            let cad = Double(currentTsRecord.count - 1) * 60 / dur * 2
             
             if !cad.isNaN && !cad.isInfinite{
                 cadence = Int(cad)
             }
         }
         
-        // tibShock Saving
-        if tibShockPos.count > 0 {
-            for i in 0..<tibShockPos.count{
-                let idx = tibShockPos[i]
-                let ts = [timeStamps[idx]: tibShocks[i]]
-                
-                tsRecord.append(ts)
-            }
-        }
-
+        // Update buffer
+        tsRecord1 = tsRecord2
+        tsRecord2 = tsRecord
         
-        return (tibShock, cadence, tsRecord)
+        tsPosRecord1 = tsPosRecord2
+        tsPosRecord2 = tsPosRecord
+        
+        // Pass data to ui
+        dataCalculatorDelegate?.passTsCad(tibShock: aveTs, cadence: cadence)
+        
+        // Save Cadence Data
+        DataSaver.shared.saveCad(cadRecord: cadence)
     }
-
-    
-    
 }
