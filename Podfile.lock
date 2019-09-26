@@ -1,0 +1,30 @@
+PODS:
+  - Charts (3.3.0):
+    - Charts/Core (= 3.3.0)
+  - Charts/Core (3.3.0)
+  - Eureka (5.0.0)
+  - MBProgressHUD (1.1.0)
+  - Surge (2.0.0)
+
+DEPENDENCIES:
+  - Charts
+  - Eureka
+  - MBProgressHUD (~> 1.1.0)
+  - Surge (~> 2.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Charts
+    - Eureka
+    - MBProgressHUD
+    - Surge
+
+SPEC CHECKSUMS:
+  Charts: e0dd4cd8f257bccf98407b58183ddca8e8d5b578
+  Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  Surge: 1f0286bc5f0fe4283f3455479895bf85c7ef7760
+
+PODFILE CHECKSUM: 7d75941ab3f8be2837a4170d180902416bac4e7e
+
+COCOAPODS: 1.7.5

@@ -1,0 +1,6 @@
+framework module Pods_RunningiPhone {
+  umbrella header "Pods-RunningiPhone-umbrella.h"
+
+  export *
+  module * { export * }
+}
