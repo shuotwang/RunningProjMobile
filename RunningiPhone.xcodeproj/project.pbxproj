@@ -31,6 +31,8 @@
 		BF573E4F23386F310033ADB5 /* DataCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E4E23386F310033ADB5 /* DataCalculator.swift */; };
 		BF573E5123387FDE0033ADB5 /* FindPeak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E5023387FDE0033ADB5 /* FindPeak.swift */; };
 		BF573E53233881230033ADB5 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E52233881230033ADB5 /* NeuralNetwork.swift */; };
+		BF95C932233C908B00DD0482 /* msg.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF95C931233C908B00DD0482 /* msg.wav */; };
+		BF95C934233C97C700DD0482 /* DataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C933233C97C700DD0482 /* DataExporter.swift */; };
 		BFE482F02339D690004FFBD1 /* DataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE482EF2339D690004FFBD1 /* DataSaver.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
@@ -77,6 +79,8 @@
 		BF573E4E23386F310033ADB5 /* DataCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCalculator.swift; sourceTree = "<group>"; };
 		BF573E5023387FDE0033ADB5 /* FindPeak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindPeak.swift; sourceTree = "<group>"; };
 		BF573E52233881230033ADB5 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		BF95C931233C908B00DD0482 /* msg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msg.wav; sourceTree = "<group>"; };
+		BF95C933233C97C700DD0482 /* DataExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExporter.swift; sourceTree = "<group>"; };
 		BFE482EF2339D690004FFBD1 /* DataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSaver.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				BF573E4C2337F4F60033ADB5 /* DataCollector.swift */,
 				BF573E4E23386F310033ADB5 /* DataCalculator.swift */,
 				BFE482EF2339D690004FFBD1 /* DataSaver.swift */,
+				BF95C933233C97C700DD0482 /* DataExporter.swift */,
 				BF573E5023387FDE0033ADB5 /* FindPeak.swift */,
 				BF573E52233881230033ADB5 /* NeuralNetwork.swift */,
 			);
@@ -207,6 +212,7 @@
 		BFF87270233401DC0017016A = {
 			isa = PBXGroup;
 			children = (
+				BF95C931233C908B00DD0482 /* msg.wav */,
 				BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */,
 				BFF8727B233401DC0017016A /* RunningiPhone */,
 				BF573E3B2337EF930033ADB5 /* Dialog */,
@@ -354,6 +360,7 @@
 				BFF8728A233401DE0017016A /* LaunchScreen.storyboard in Resources */,
 				BF573E462337EF930033ADB5 /* cube.obj in Resources */,
 				BFF87287233401DE0017016A /* Assets.xcassets in Resources */,
+				BF95C932233C908B00DD0482 /* msg.wav in Resources */,
 				BF573E452337EF930033ADB5 /* icon-580.png in Resources */,
 				BFF87282233401DC0017016A /* Main.storyboard in Resources */,
 			);
@@ -428,6 +435,7 @@
 				BF1D56C123347F2300D771AE /* UserInfoTableViewController.swift in Sources */,
 				BF1D56D22335D92300D771AE /* LineChartRecordsDetailCollectionViewCell.swift in Sources */,
 				BF573E2723374A020033ADB5 /* GlobalVariables.swift in Sources */,
+				BF95C934233C97C700DD0482 /* DataExporter.swift in Sources */,
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF573E2A2337EE5F0033ADB5 /* SensorManager.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,

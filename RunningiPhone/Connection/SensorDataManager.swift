@@ -21,7 +21,6 @@ class SensorDataManager: NSObject {
     var gyrNumber = 0
 
     var peripheral: CBPeripheral!
-//    var imuData: ImuData?
     
     var acc = [Double]()
     var gyr = [Double]()
@@ -48,7 +47,7 @@ class SensorDataManager: NSObject {
             let valueY = -Double(x) / self.accSensitivity
             let valueZ = Double(z) / self.accSensitivity
             
-            let accData = AccData(milliStamp: Date().timeIntervalSince1970, accX: valueX, accY: valueY, accZ: valueZ)
+            let accData = AccData(milliStamp: Date().timeIntervalSince1970, accX: -valueX, accY: valueY, accZ: valueZ)
             DataCollector.shared.receiveAccData(data: accData)
 
         } else if sensorType == "GYR" {
@@ -61,19 +60,6 @@ class SensorDataManager: NSObject {
                 DataCollector.shared.receiveGyrData(data: gyrData)
             }
         }
-        
-//        if acc.count == 3 && gyr.count == 3 {
-//            let imuData = ImuData(milliStamp: Date().milliStamp, device: String(peripheral.identifier.uuidString.suffix(4)), acc: acc, gyr: gyr)
-//            acc = []
-//            gyr = []
-//
-//            CentralDataCollector.shared.receiveData(imuData: imuData)
-//        }
-        
-//    NSLog("\(Date().milliStamp)\t\(peripheral.identifier.uuidString.suffix(4))\t%8.2fg %8.2fg %8.2fg %8.2fd %8.2fd %8.2fd %8.d", acc[0], acc[1], acc[2], gyr[0], gyr[1], gyr[2])
-
-        
     }
-            
 }
 

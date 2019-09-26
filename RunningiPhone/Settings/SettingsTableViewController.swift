@@ -17,9 +17,16 @@ class SettingsTableViewController: UITableViewController {
 
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        if let tsThres = g_tsThres{
+            self.tibShockThres = tsThres
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        if let tsThres = g_tsThres{
+            self.tibShockThres = tsThres
+        }
         tableView.reloadData()
     }
 
@@ -110,7 +117,7 @@ class SettingsTableViewController: UITableViewController {
                 let tibShockCell = tableView.dequeueReusableCell(withIdentifier: "rightEditCell", for: indexPath) as! RightEditTableViewCell
                 
                 tibShockCell.titleLabel.text = "Tibial Shock Threshold"
-                tibShockCell.rightTextField.text = "\(tibShockThres)"
+                tibShockCell.rightTextField.text = String(format: "%.2f", tibShockThres) + "G"
 
                 cell = tibShockCell
             }
@@ -195,17 +202,17 @@ class SettingsTableViewController: UITableViewController {
     // MARK: - Audio Feedback Switch
     @IBAction func audioSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            print("audio feedback is on")
+            g_isAudioOn = true
         } else {
-            print("audio feedback is off")
+            g_isAudioOn = false
         }
     }
     
     @IBAction func gyrSwitch(_ sender: UISwitch) {
         if sender.isOn {
-            print("gyr is on")
+            g_gyrIsOn = true
         } else {
-            print("gyr is off")
+            g_gyrIsOn = false
         }
     }
     

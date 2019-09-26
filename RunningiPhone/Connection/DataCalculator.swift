@@ -106,4 +106,8 @@ class DataCalculator {
         // Save Cadence Data
         DataSaver.shared.saveCad(cadRecord: cadence)
     }
+    
+    func calTsThres(tsRecord: [Double]) -> Double{
+        return Double(Surge.sum(tsRecord)/Double(tsRecord.count))
+    }
 }

@@ -25,6 +25,8 @@ class TrialSelectionViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.view.isUserInteractionEnabled = false
         self.view.alpha = 0.4
+        
+        // check if user is selected
         let curUser = UserDefaults.standard.integer(forKey: "curUser")
         if curUser == 0{
             let alert = UIAlertController(title: "No User Selected", message: "Please select user at Settings → Switch User", preferredStyle: .alert)
@@ -36,6 +38,23 @@ class TrialSelectionViewController: UIViewController {
         }else{
             self.view.isUserInteractionEnabled = true
             self.view.alpha = 1
+        }
+        
+        // check if baseline exists
+        let tsThres = UserDefaults.standard.double(forKey: "tsThres")
+        if tsThres == 0{
+            let alert = UIAlertController(title: "No Baseline Record", message: "Please do baseline test first, then switch to new training trial", preferredStyle: .alert)
+                       
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+            self.newTrialBtn.isEnabled = false
+            self.newTrialBtn.alpha = 0.4
+        }else {
+            self.newTrialBtn.isEnabled = true
+            self.newTrialBtn.alpha = 1
         }
     }
     

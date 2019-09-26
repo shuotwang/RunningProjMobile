@@ -9,6 +9,7 @@
 import UIKit
 import MBProgressHUD
 import CoreBluetooth
+import AVFoundation
 
 class TrialViewController: UIViewController {
     
@@ -17,11 +18,13 @@ class TrialViewController: UIViewController {
     @IBOutlet weak var cadLabel: UILabel!
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var finishBtn: UIButton!
+    @IBOutlet weak var tibShockThres: UILabel!
     
     var time = 0
     var isPaused = true
     var isInitial = true
     var type: String?
+    var player: AVAudioPlayer?
     
     var startingTime: Date?
     
@@ -32,7 +35,8 @@ class TrialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.setHidesBackButton(true, animated: true)
         tabBarController?.tabBar.isHidden = true
         
         startBtn.setTitle("Start", for: .normal)
@@ -43,11 +47,26 @@ class TrialViewController: UIViewController {
             self.periController = pc
         }
         
+        if let type = self.type{
+            switch type {
+            case "baseline":
+                navigationItem.title = "Baseline Test"
+            default:
+                navigationItem.title = "Training Trial"
+                
+                if let tsThres = g_tsThres{
+                    tibShockThres.text = "Threshold: " + String(format: "%.2f", tsThres) + "G"
+                }
+            }
+        }
+        
         DataCalculator.shared.dataCalculatorDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.isInitial = true
+        
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,8 +84,9 @@ class TrialViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.tabBar.isHidden = false
+        navigationItem.setHidesBackButton(false, animated: true)
     }
 }
 
@@ -127,8 +147,7 @@ extension TrialViewController{
                 DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type)
             }
             
-            
-            // 2. pop
+            // 3. pop
             self.navigationController?.popViewController(animated: true)
         }))
         alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
@@ -147,6 +166,12 @@ extension TrialViewController: DataCalculatorDelegate{
     func passTsCad(tibShock: Double, cadence: Int) {
         if !tibShock.isNaN && !tibShock.isInfinite {
             self.tibShockLabel.text = String(format: "%.2f", tibShock) + "G"
+            
+            if let tsThres = g_tsThres{
+                if tibShock > tsThres && g_isAudioOn && type == "new"{
+                    playTsAudio()
+                }
+            }
         }
         
         if cadence != 0 {
@@ -154,5 +179,17 @@ extension TrialViewController: DataCalculatorDelegate{
         }
     }
     
-    
+    func playTsAudio(){
+        let url = Bundle.main.url(forResource: "msg", withExtension: "wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 }
