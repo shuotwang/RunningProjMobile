@@ -26,6 +26,7 @@ class RecordsTableViewController: UITableViewController {
         if let user = g_currentUser{
             records = CoreDataHelper.shared.findRecordsWith(userNum: user.num)
         }
+        self.selectedRecordIdx = nil
         self.tableView.reloadData()
     }
 
@@ -62,7 +63,7 @@ class RecordsTableViewController: UITableViewController {
             return 3
         }
         else{
-            return 2
+            return 1
         }
     }
 
@@ -104,9 +105,9 @@ class RecordsTableViewController: UITableViewController {
             cell = detailCell
         case 2:
             if indexPath.row == 0 {
-                cell.textLabel?.text = "Export IMU record"
+                cell.textLabel?.text = "Export IMU Record"
             }else if indexPath.row == 1{
-                cell.textLabel?.text = "Export Tibial Shock record"
+                cell.textLabel?.text = "Export Tibial Shock Record"
             }else if indexPath.row == 2{
                 cell.textLabel?.text = "Export Cadence Record"
             }

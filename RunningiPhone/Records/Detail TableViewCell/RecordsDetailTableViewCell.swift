@@ -42,7 +42,7 @@ extension RecordsDetailTableViewCell: UICollectionViewDataSource, UICollectionVi
                 if let tsRecord = record.tibShock,
                     let tsPosRecord = record.tibShockPos{
                     for i in 0..<tsRecord.count{
-                        data.append(ChartDataEntry(x: tsPosRecord[i], y: tsRecord[i]))
+                        data.append(ChartDataEntry(x: tsPosRecord[i]-tsPosRecord[0], y: tsRecord[i]))
                     }
                 }
                 

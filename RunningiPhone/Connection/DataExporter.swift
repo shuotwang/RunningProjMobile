@@ -12,23 +12,27 @@ class DataExporter {
     
     static func createImuCsv(viewController: UIViewController, fileName: String, userNum: Int64, accTimeStamp: [Double], accXs: [Double], accYs: [Double], accZs: [Double], gyrTimeStamp: [Double]?, gyrXs:[Double]?, gyrYs: [Double]?, gyrZs: [Double]?) {
         
-        let fileName = fileName + "_" + String(userNum) + "_imu.csv"
+        let fileName = fileName + "_" + String(userNum) + "_Imu.csv"
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         var csvText = "accTimeStamp,accX,accY,accZ,gyrTimeStamp,gyrX,gyrY,gyrZ\n"
         
-        for i in 0..<min(accTimeStamp.count, accXs.count) {
-            if let gyrTimeStamp = gyrTimeStamp,
-                let gyrXs = gyrXs,
-                let gyrYs = gyrYs,
-                let gyrZs = gyrZs{
+        if let gyrTimeStamp = gyrTimeStamp,
+        let gyrXs = gyrXs,
+        let gyrYs = gyrYs,
+        let gyrZs = gyrZs{
+            if gyrXs.count > 0 && gyrYs.count > 0 && gyrZs.count > 0{
+                for i in 0..<min(accTimeStamp.count, gyrTimeStamp.count){
                     let newLine = "\(accTimeStamp[i]),\(accXs[i]),\(accYs[i]),\(accZs[i]),\(gyrTimeStamp[i]),\(gyrXs[i]),\(gyrYs[i]),\(gyrZs[i])\n"
                     csvText.append(contentsOf: newLine)
-            }else{
-                let newLine = "\(accTimeStamp[i]),\(accXs[i]),\(accYs[i]),\(accZs[i]),0,0,0,0\n"
-                csvText.append(contentsOf: newLine)
+                }
+            }else {
+                for i in 0..<accTimeStamp.count {
+                    let newLine = "\(accTimeStamp[i]),\(accXs[i]),\(accYs[i]),\(accZs[i]),0,0,0,0\n"
+                    csvText.append(contentsOf: newLine)
+                }
             }
         }
-        
+
         do {
             try csvText.write(to: path!, atomically: true, encoding: String.Encoding.utf8)
         } catch {
