@@ -73,7 +73,7 @@ class DataExporter {
         var csvText = "cadence\n"
         
         for i in 0..<cadence.count {
-            let newLine = "\(cadence[i]))\n"
+            let newLine = "\(cadence[i])\n"
             csvText.append(contentsOf: newLine)
         }
         

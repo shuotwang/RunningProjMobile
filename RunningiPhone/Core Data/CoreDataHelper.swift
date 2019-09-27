@@ -31,6 +31,7 @@ class CoreDataHelper: NSObject {
 // MARK: - User
 extension CoreDataHelper {
     func createUserWith(num: Int64,
+                        subNum: Int64,
                         name: String,
                         gender: Int64,
                         height: Double,
@@ -39,6 +40,7 @@ extension CoreDataHelper {
         let record = NSEntityDescription.insertNewObject(forEntityName: "User", into: context) as! User
         
         record.num = num
+        record.subNum = subNum
         record.name = name
         record.birthday = birthday
         
@@ -60,6 +62,7 @@ extension CoreDataHelper {
     }
     
     func updateUserWith(num: Int64,
+                        subNum: Int64,
                         name: String,
                         gender: Int64,
                         height: Double,
@@ -71,6 +74,7 @@ extension CoreDataHelper {
             let records = try context.fetch(fetchRequest)
             for record in records {
                 record.name = name
+                record.subNum = subNum
                 record.birthday = birthday
                 
                 record.gender = gender

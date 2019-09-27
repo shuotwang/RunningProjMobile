@@ -103,9 +103,7 @@ class SettingsTableViewController: UITableViewController {
             
             if let currentUser = g_currentUser{
                 userCell.userName.text = currentUser.name
-                
-                // TODO: userInfo writes num of trials
-
+                userCell.userInfo.text = "Subject Number: " + String(currentUser.subNum)
             }else {
                 userCell.userName.text = "Not Selected"
                 userCell.userInfo.text = "Please select a user"
@@ -184,6 +182,9 @@ class SettingsTableViewController: UITableViewController {
         switch segue.identifier {
         case "userInfoSegue":
             let newVC = segue.destination as! UserInfoTableViewController
+            if let user = g_currentUser{
+                newVC.user = user
+            }
         case "userListSegue":
             let newVC = segue.destination as! UserListTableViewController
         default:

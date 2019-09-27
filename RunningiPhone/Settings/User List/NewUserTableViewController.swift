@@ -46,21 +46,24 @@ class NewUserTableViewController: FormViewController {
         
         let formvalues = self.form.values()
         if let name = formvalues["Name"],
+            let subNum = formvalues["subNum"],
             let gender = genders.firstIndex(of: (formvalues["Gender"] as! String)),
             let height = formvalues["Height"],
             let weight = formvalues["Weight"],
             let birthday = formvalues["Birthday"]{
             
             if let name = name,
+                let subNum = subNum,
                 let height = height,
                 let weight = weight,
                 let birthday = birthday{
                 CoreDataHelper.shared.createUserWith(num: thisNum,
-                                                      name: name as! String,
-                                                      gender: Int64(gender),
-                                                      height: height as! Double,
-                                                      weight: weight as! Double,
-                                                      birthday: birthday as! Date)
+                                                     subNum: Int64(subNum as! Int),
+                                                     name: name as! String,
+                                                     gender: Int64(gender),
+                                                     height: height as! Double,
+                                                     weight: weight as! Double,
+                                                     birthday: birthday as! Date)
             }
             
         }
@@ -75,27 +78,30 @@ class NewUserTableViewController: FormViewController {
         UIView.performWithoutAnimation {
             form +++ Section("Personal Info")
                 
-                <<< DecimalRow(){ row in
+                <<< IntRow(){ row in
                     row.title = "Subject Number"
                     row.tag = "subNum"
-                    //                    row.value = user?.name
-                    
+                }.cellUpdate{ cell, row in
+                    cell.titleLabel?.textColor = .white
+                    cell.textField.textColor = .white
                 }
                 
                 <<< TextRow(){ row in
                     row.title = "Name"
                     row.tag = "Name"
-                    //                    row.value = user?.name
-                    
+                }.cellUpdate{ cell, row in
+                    cell.titleLabel?.textColor = .white
+                    cell.textField.textColor = .white
                 }
                 
                 <<< DateRow(){
                     $0.title = "Birthday"
                     $0.tag = "Birthday"
-                    //                    $0.value = user?.birthday
-                        
                     }.cellUpdate{ cell, row in
                         cell.datePicker.setValue(false, forKeyPath: "highlightsToday")
+                        cell.textLabel?.textColor = .white
+                        cell.detailTextLabel?.textColor = .white
+                        
             }
             
             
@@ -106,6 +112,9 @@ class NewUserTableViewController: FormViewController {
                     $0.title = "Gender"
                     $0.tag = "Gender"
                     $0.value = genders[0]
+                }.cellUpdate{ cell, row in
+                    cell.titleLabel?.textColor = .white
+                    cell.tintColor = .gray
                 }
                 
                 
@@ -116,6 +125,10 @@ class NewUserTableViewController: FormViewController {
                     //                    $0.value = user?.height
                     $0.placeholder = "in cm, 1 decimal place"
                     $0.placeholderColor = .gray
+                }.cellUpdate{ cell, row in
+                    cell.titleLabel?.textColor = .white
+                    cell.textField.textColor = .white
+                    cell.tintColor = .gray
                 }
                 
                 <<< DecimalRow() {
@@ -125,6 +138,10 @@ class NewUserTableViewController: FormViewController {
                     //                    $0.value = user?.weight
                     $0.placeholder = "in kg, 1 decimal place"
                     $0.placeholderColor = .gray
+            }.cellUpdate{ cell, row in
+                cell.titleLabel?.textColor = .white
+                cell.textField.textColor = .white
+                cell.tintColor = .gray
             }
         }
     }
