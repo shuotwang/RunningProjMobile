@@ -16,6 +16,7 @@ protocol NewUserDelegate {
 class NewUserTableViewController: FormViewController {
 
     let numberFormatter = NumberFormatter()
+    let tsFormatter = NumberFormatter()
     let genders = ["Male", "Female"]
     
     var newUserDelegate: NewUserDelegate?
@@ -35,6 +36,9 @@ class NewUserTableViewController: FormViewController {
         
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 1
+        
+        tsFormatter.numberStyle = .decimal
+        tsFormatter.maximumFractionDigits = 2
     }
     
     @objc func cancelBtnPressed() {
@@ -47,6 +51,7 @@ class NewUserTableViewController: FormViewController {
         let formvalues = self.form.values()
         if let name = formvalues["Name"],
             let subNum = formvalues["subNum"],
+            let tsThres = formvalues["tsThres"],
             let gender = genders.firstIndex(of: (formvalues["Gender"] as! String)),
             let height = formvalues["Height"],
             let weight = formvalues["Weight"],
@@ -64,6 +69,9 @@ class NewUserTableViewController: FormViewController {
                                                      height: height as! Double,
                                                      weight: weight as! Double,
                                                      birthday: birthday as! Date)
+                if let tsThres = tsThres{
+                    CoreDataHelper.shared.updateUserWithNewThres(num: thisNum, tsThres: tsThres as! Double)
+                }
             }
             
         }
@@ -138,6 +146,19 @@ class NewUserTableViewController: FormViewController {
                     //                    $0.value = user?.weight
                     $0.placeholder = "in kg, 1 decimal place"
                     $0.placeholderColor = .gray
+            }.cellUpdate{ cell, row in
+                cell.titleLabel?.textColor = .white
+                cell.textField.textColor = .white
+                cell.tintColor = .gray
+            }
+            
+            form +++ Section("Training Info")
+            <<< DecimalRow() {
+                $0.title = "Tibial Shock Threshold (G)"
+                $0.tag = "tsThres"
+                $0.formatter = tsFormatter
+                $0.placeholder = "2 decimal places"
+                $0.placeholderColor = .gray
             }.cellUpdate{ cell, row in
                 cell.titleLabel?.textColor = .white
                 cell.textField.textColor = .white

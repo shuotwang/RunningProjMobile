@@ -14,6 +14,7 @@ class UserInfoTableViewController: FormViewController{
     var user: User?
     
     let numberFormatter = NumberFormatter()
+    let tsFormatter = NumberFormatter()
     let genders = ["Male", "Female"]
     
     override func viewDidLoad() {
@@ -29,6 +30,9 @@ class UserInfoTableViewController: FormViewController{
         
         numberFormatter.numberStyle = .decimal
         numberFormatter.maximumFractionDigits = 1
+        
+        tsFormatter.numberStyle = .decimal
+        tsFormatter.maximumFractionDigits = 2
     }
     
     @objc func editBtnPressed() {
@@ -44,20 +48,23 @@ class UserInfoTableViewController: FormViewController{
         if let user = self.user{
             let formValues = self.form.values()
             let userNum = user.num
-            let subNum = formValues["subNum"]
-            let name = formValues["Name"] as! String
-            let gender = genders.firstIndex(of: (formValues["Gender"] as! String))
-            let height = formValues["Height"] as! Double
-            let weight = formValues["Weight"] as! Double
-            let birthday = formValues["Birthday"] as! Date
-            if let gender = gender{
-                CoreDataHelper.shared.updateUserWith(num: userNum,
-                                                     subNum: Int64(subNum as! Int),
-                                                     name: name,
-                                                     gender: Int64(gender),
-                                                     height: height,
-                                                     weight: weight,
-                                                     birthday: birthday)
+            if let subNum = formValues["subNum"],
+                let tsThres = formValues["tsThres"],
+                let name = formValues["Name"],
+                let gender = genders.firstIndex(of: (formValues["Gender"] as! String)),
+                let height = formValues["Height"],
+                let weight = formValues["Weight"],
+                let birthday = formValues["Birthday"]{
+                    CoreDataHelper.shared.updateUserWith(num: userNum,
+                                                         subNum: Int64(subNum as! Int),
+                                                         name: name as! String,
+                                                         gender: Int64(gender),
+                                                         height: height as! Double,
+                                                         weight: weight as! Double,
+                                                         birthday: birthday as! Date)
+                if let tsThres = tsThres{
+                    CoreDataHelper.shared.updateUserWithNewThres(num: userNum, tsThres: tsThres as! Double)
+                }
             }
         }
     }
@@ -131,6 +138,20 @@ class UserInfoTableViewController: FormViewController{
                     $0.value = user?.weight
                     $0.placeholder = "in kg, 1 decimal place"
                     $0.placeholderColor = .gray
+            }.cellUpdate{ cell, row in
+                cell.titleLabel?.textColor = .white
+                cell.textField.textColor = .white
+                cell.tintColor = .gray
+            }
+            
+            form +++ Section("Training Info")
+            <<< DecimalRow() {
+                $0.title = "Tibial Shock Threshold (G)"
+                $0.tag = "tsThres"
+                $0.formatter = tsFormatter
+                $0.value = user?.tsThres
+                $0.placeholder = "2 decimal places"
+                $0.placeholderColor = .gray
             }.cellUpdate{ cell, row in
                 cell.titleLabel?.textColor = .white
                 cell.textField.textColor = .white

@@ -22,7 +22,6 @@ class UserListTableViewController: UITableViewController {
             if let index = idx{
                 self.tableView.selectRow(at: IndexPath(row: index, section: 0), animated: true, scrollPosition: .middle)
             }
-            
         }
         
         navigationItem.title = "Users"
@@ -96,6 +95,7 @@ class UserListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let users = self.users{
+            // update user
             g_currentUser = users[indexPath.row]
             UserDefaults.standard.set(Int(users[indexPath.row].num), forKey: "curUser")
             tableView.reloadData()

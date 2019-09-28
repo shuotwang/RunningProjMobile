@@ -87,6 +87,21 @@ extension CoreDataHelper {
         saveContext()
     }
     
+    func updateUserWithNewThres(num: Int64,
+                                tsThres: Double){
+        let fetchRequest: NSFetchRequest = User.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "num == %d", num)
+        do {
+            let records = try context.fetch(fetchRequest)
+            for record in records {
+                record.tsThres = tsThres
+            }
+        } catch {
+            fatalError()
+        }
+        saveContext()
+    }
+    
     
     func findUserWith(num: Int) -> User?{
         let fetchRequest: NSFetchRequest = User.fetchRequest()

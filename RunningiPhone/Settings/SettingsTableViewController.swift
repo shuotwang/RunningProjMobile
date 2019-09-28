@@ -18,14 +18,14 @@ class SettingsTableViewController: UITableViewController {
         self.navigationItem.title = "Settings"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
-        if let tsThres = g_tsThres{
-            self.tibShockThres = tsThres
+        if let user = g_currentUser{
+            self.tibShockThres = user.tsThres
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let tsThres = g_tsThres{
-            self.tibShockThres = tsThres
+        if let user = g_currentUser{
+            self.tibShockThres = user.tsThres
         }
         tableView.reloadData()
     }
@@ -116,6 +116,7 @@ class SettingsTableViewController: UITableViewController {
                 
                 tibShockCell.titleLabel.text = "Tibial Shock Threshold"
                 tibShockCell.rightTextField.text = String(format: "%.2f", tibShockThres) + "G"
+                tibShockCell.isUserInteractionEnabled = false
 
                 cell = tibShockCell
             }
@@ -124,6 +125,7 @@ class SettingsTableViewController: UITableViewController {
                 let audioFeedbackCell = tableView.dequeueReusableCell(withIdentifier: "switchCell", for: indexPath) as! SwitchTableViewCell
                 
                 audioFeedbackCell.titleLabel?.text = "Tibial Shock Audio Feedback"
+                audioFeedbackCell.isHighlighted = false
                 
                 cell = audioFeedbackCell
             }
@@ -167,6 +169,10 @@ class SettingsTableViewController: UITableViewController {
         case 1:
             if indexPath.row == 0 {
                 
+            }
+            else if indexPath.row == 1{
+                let cell = tableView.cellForRow(at: indexPath)
+                cell?.isHighlighted = false
             }
         case 2:
             break

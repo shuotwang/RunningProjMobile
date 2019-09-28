@@ -23,13 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             g_currentUser = curUser
         }
         
-        let tsThres = UserDefaults.standard.double(forKey: "tsThres")
-        if tsThres != 0 {
-            g_tsThres = tsThres
-        }
-        
-        print(tsThres, g_tsThres)
-        
         return true
     }
 

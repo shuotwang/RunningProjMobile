@@ -54,7 +54,7 @@ class TrialViewController: UIViewController {
             default:
                 navigationItem.title = "Training Trial"
                 
-                if let tsThres = g_tsThres{
+                if let tsThres = g_currentUser?.tsThres{
                     tibShockThres.text = "Threshold: " + String(format: "%.2f", tsThres) + "G"
                 }
             }
@@ -167,8 +167,8 @@ extension TrialViewController: DataCalculatorDelegate{
         if !tibShock.isNaN && !tibShock.isInfinite {
             self.tibShockLabel.text = String(format: "%.2f", tibShock) + "G"
             
-            if let tsThres = g_tsThres{
-                if tibShock > tsThres && g_isAudioOn && type == "new"{
+            if let tsThres = g_currentUser?.tsThres{
+                if tsThres != 0 && tibShock > tsThres && g_isAudioOn && type == "new"{
                     playTsAudio()
                 }
             }

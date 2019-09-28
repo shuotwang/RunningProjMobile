@@ -70,7 +70,7 @@ class DataSaver {
         if type == "baseline"{
             let tsThres = DataCalculator.shared.calTsThres(tsRecord: tsRecord) * 0.8
             UserDefaults.standard.set(tsThres, forKey: "tsThres")
-            g_tsThres = tsThres
+            CoreDataHelper.shared.updateUserWithNewThres(num: userNum, tsThres: tsThres)
         }
         
         // 3. empty all data buffer

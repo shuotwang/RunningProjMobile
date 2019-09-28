@@ -41,7 +41,7 @@ class TrialSelectionViewController: UIViewController {
         }
         
         // check if baseline exists
-        let tsThres = UserDefaults.standard.double(forKey: "tsThres")
+        let tsThres = g_currentUser?.tsThres
         if tsThres == 0{
             let alert = UIAlertController(title: "No Baseline Record", message: "Please do baseline test first, then switch to new training trial", preferredStyle: .alert)
                        
