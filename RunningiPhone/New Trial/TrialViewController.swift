@@ -34,6 +34,8 @@ class TrialViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SensorManager.shared.sensorManagerToTrialDelegate = self
 
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.setHidesBackButton(true, animated: true)
@@ -60,13 +62,14 @@ class TrialViewController: UIViewController {
             }
         }
         
+        g_isConnected = true
+        
         DataCalculator.shared.dataCalculatorDelegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.isInitial = true
-        
-        
+        g_isConnected = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -84,6 +87,7 @@ class TrialViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+//        g_isConnected = false
         navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.tabBar.isHidden = false
         navigationItem.setHidesBackButton(false, animated: true)
@@ -181,6 +185,36 @@ extension TrialViewController: DataCalculatorDelegate{
     
     func playTsAudio(){
         let url = Bundle.main.url(forResource: "msg", withExtension: "wav")!
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.prepareToPlay()
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+}
+
+extension TrialViewController: SensorManagerToTrialDelegate{
+    func unexpectedDisconnect() {
+        
+        playDisconnectAudio()
+        UINotificationFeedbackGenerator().notificationOccurred(.error)
+        
+        let alert = UIAlertController(title: "Sensor Disconnected", message: "An unexpected disconnection event happens. Please reconnect the sensor.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func playDisconnectAudio(){
+        let url = Bundle.main.url(forResource: "beep", withExtension: "wav")!
         
         do {
             player = try AVAudioPlayer(contentsOf: url)

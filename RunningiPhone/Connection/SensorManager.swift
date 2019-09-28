@@ -19,12 +19,17 @@ protocol SensorManagerDelegate: NSObject {
     func didDisconnectPeripheral(peripheral: CBPeripheral)
 }
 
+protocol SensorManagerToTrialDelegate {
+    func unexpectedDisconnect()
+}
+
 class SensorManager: NSObject, CBCentralManagerDelegate {
     
     let DisconnectedPeripheral = "DisconnectedPeripheral"
     
     static let shared = SensorManager()
     var delegate: SensorManagerDelegate? // SensorSelectionViewController
+    var sensorManagerToTrialDelegate: SensorManagerToTrialDelegate?
     var device: CBPeripheral?
     
     var devices = [CBPeripheral]()
@@ -101,6 +106,11 @@ class SensorManager: NSObject, CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         NSLog("Disconnect from device: %@", String(peripheral.name!))
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: DisconnectedPeripheral), object: nil, userInfo: nil)
+        
+        if g_isConnected {
+            sensorManagerToTrialDelegate?.unexpectedDisconnect()
+        }
+        
         self.delegate?.didDisconnectPeripheral(peripheral: peripheral)
     }
     

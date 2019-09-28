@@ -33,6 +33,7 @@
 		BF573E53233881230033ADB5 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF573E52233881230033ADB5 /* NeuralNetwork.swift */; };
 		BF95C932233C908B00DD0482 /* msg.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF95C931233C908B00DD0482 /* msg.wav */; };
 		BF95C934233C97C700DD0482 /* DataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C933233C97C700DD0482 /* DataExporter.swift */; };
+		BF95C938233F513500DD0482 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF95C937233F513500DD0482 /* beep.wav */; };
 		BFE482F02339D690004FFBD1 /* DataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE482EF2339D690004FFBD1 /* DataSaver.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
@@ -81,6 +82,7 @@
 		BF573E52233881230033ADB5 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
 		BF95C931233C908B00DD0482 /* msg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msg.wav; sourceTree = "<group>"; };
 		BF95C933233C97C700DD0482 /* DataExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExporter.swift; sourceTree = "<group>"; };
+		BF95C937233F513500DD0482 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = beep.wav; path = ../../../Documents/beep.wav; sourceTree = "<group>"; };
 		BFE482EF2339D690004FFBD1 /* DataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSaver.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				BF95C931233C908B00DD0482 /* msg.wav */,
+				BF95C937233F513500DD0482 /* beep.wav */,
 				BF573E492337EFEE0033ADB5 /* RunningiPhone-Bridging-Header.h */,
 				BFF8727B233401DC0017016A /* RunningiPhone */,
 				BF573E3B2337EF930033ADB5 /* Dialog */,
@@ -356,6 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF95C938233F513500DD0482 /* beep.wav in Resources */,
 				BF573E482337EF930033ADB5 /* cube.mtl in Resources */,
 				BFF8728A233401DE0017016A /* LaunchScreen.storyboard in Resources */,
 				BF573E462337EF930033ADB5 /* cube.obj in Resources */,

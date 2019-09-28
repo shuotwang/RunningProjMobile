@@ -16,6 +16,7 @@ var g_peripheral: CBPeripheral?
 var g_periController: PeripheralController?
 var g_startingTime: Date?
 var g_isAudioOn: Bool = true
+var g_isConnected: Bool = false
 
 let darkDarkGray = UIColor(red: 31/255, green: 33/255, blue: 36/255, alpha: 1)
 

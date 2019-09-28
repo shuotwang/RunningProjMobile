@@ -223,6 +223,7 @@ extension NewTrialTableViewController: SensorManagerDelegate{
     }
     
     func didDisconnectPeripheral(peripheral: CBPeripheral) {
+        
     }
     
     
