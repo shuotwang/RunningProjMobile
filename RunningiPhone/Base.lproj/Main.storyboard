@@ -652,7 +652,41 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lnM-Iv-dsH" customClass="TimeInputTableViewCell">
+                                <rect key="frame" x="0.0" y="99" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lnM-Iv-dsH" id="Y7T-MA-hSZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fqA-qh-D0m">
+                                            <rect key="frame" x="20" y="12" width="174" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="MpN-wd-Owk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQt-i7-YW4">
+                                            <rect key="frame" x="240" y="5" width="154" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="NlN-Gw-D5g"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="nQt-i7-YW4" secondAttribute="trailing" constant="20" id="JHn-Nm-e9p"/>
+                                        <constraint firstItem="nQt-i7-YW4" firstAttribute="centerY" secondItem="Y7T-MA-hSZ" secondAttribute="centerY" id="NVX-J6-QIE"/>
+                                        <constraint firstItem="fqA-qh-D0m" firstAttribute="leading" secondItem="Y7T-MA-hSZ" secondAttribute="leadingMargin" id="SKb-3A-PvN"/>
+                                        <constraint firstItem="fqA-qh-D0m" firstAttribute="centerY" secondItem="Y7T-MA-hSZ" secondAttribute="centerY" id="wun-BY-qTi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="Q1p-jX-GPj" id="gmt-sw-18o"/>
                             <outlet property="delegate" destination="Q1p-jX-GPj" id="BeG-ic-f8S"/>

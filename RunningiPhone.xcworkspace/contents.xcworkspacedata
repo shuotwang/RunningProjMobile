@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:RunningiPhone/New Trial/Cells/TimeInputTableViewCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:RunningiPhone.xcodeproj">
    </FileRef>
    <FileRef
