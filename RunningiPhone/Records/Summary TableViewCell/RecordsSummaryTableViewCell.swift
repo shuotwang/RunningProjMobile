@@ -10,6 +10,7 @@ import UIKit
 
 protocol RecordsSummaryDelegate {
     func passRecordIdx(index: Int)
+    func deleteCell(toBeDeletedNum: Int)
 }
 
 class RecordsSummaryTableViewCell: UITableViewCell {
@@ -27,6 +28,12 @@ class RecordsSummaryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.dateFormatter.dateFormat = "MMM dd, yyyy HH:mm"
+        
+        let longPressGR = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(longPressGR:))) // function in extension
+        longPressGR.minimumPressDuration = 0.5
+        longPressGR.delaysTouchesBegan = true
+        longPressGR.delegate = self
+        self.summaryCollectionView.addGestureRecognizer(longPressGR)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +45,26 @@ class RecordsSummaryTableViewCell: UITableViewCell {
 }
 
 extension RecordsSummaryTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    @objc func handleLongPress(longPressGR: UILongPressGestureRecognizer) {
+        
+        if longPressGR.state == .began {
+            
+            let point = longPressGR.location(in: self.summaryCollectionView)
+            let indexPath = self.summaryCollectionView.indexPathForItem(at: point)
+
+            if let indexPath = indexPath{
+                let num = records.count - 1
+                let toBeDeletedNum = records[num - indexPath.row].recordNum
+                
+                recordsSummaryDelegate?.deleteCell(toBeDeletedNum: Int(toBeDeletedNum))
+                print("\(indexPath) Selected")
+            }
+            else {
+                print("Could not find index path")
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return records.count
