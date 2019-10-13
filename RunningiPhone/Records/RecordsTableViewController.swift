@@ -116,7 +116,7 @@ class RecordsTableViewController: UITableViewController {
                 let record = records[selectedIdx]
                 if indexPath.row == 0{
                     cell.textLabel?.textColor = .white
-                    cell.textLabel?.isUserInteractionEnabled = false
+                    cell.isUserInteractionEnabled = false
                     cell.textLabel?.text = "No Feedback From"
                     cell.detailTextLabel?.text = String(format: "%.02d", record.fb1/60)+":"+String(format: "%.02d", record.fb1%60)
                 }
