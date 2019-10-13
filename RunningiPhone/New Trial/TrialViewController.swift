@@ -19,12 +19,19 @@ class TrialViewController: UIViewController {
     @IBOutlet weak var startBtn: UIButton!
     @IBOutlet weak var finishBtn: UIButton!
     @IBOutlet weak var tibShockThres: UILabel!
+    @IBOutlet weak var timeAccessoryLabel: UILabel!
+    
+    var totalTime: Int?
     
     var time = 0
     var isPaused = true
     var isInitial = true
     var type: String?
     var player: AVAudioPlayer?
+    
+    var fbt1: Int?
+    var nofbt: Int?
+    var fbt2: Int?
     
     var startingTime: Date?
     
@@ -36,14 +43,14 @@ class TrialViewController: UIViewController {
         super.viewDidLoad()
         
         SensorManager.shared.sensorManagerToTrialDelegate = self
-
+        
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.setHidesBackButton(true, animated: true)
         tabBarController?.tabBar.isHidden = true
         
         // TODO: For testing
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self
-//            , action: #selector(testingBtnPressed))
+        //        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self
+        //            , action: #selector(testingBtnPressed))
         
         startBtn.setTitle("Start", for: .normal)
         
@@ -57,11 +64,33 @@ class TrialViewController: UIViewController {
             switch type {
             case "baseline":
                 navigationItem.title = "Baseline Test"
+            case "feedback":
+                navigationItem.title = "Feedback Time Trial"
+                
+                if let tsThres = g_currentUser?.tsThres{
+                    tibShockThres.text = "Threshold: " + String(format: "%.2f", tsThres) + "G"
+                }
+                
+                if let fb1 = self.fbt1,
+                    let nofb = self.nofbt,
+                    let fb2 = self.fbt2{
+                    
+                    let t1 = String(format: "%.02d", fb1/60)+":"+String(format: "%.02d", fb1%60)
+                    let t2 = String(format: "%.02d", (fb1+nofb)/60)+":"+String(format: "%.02d", (fb1+nofb)%60)
+                    let t3 = String(format: "%.02d", (fb1+nofb+fb2)/60)+":"+String(format: "%.02d", (fb1+nofb+fb2)%60)
+                    
+                    timeAccessoryLabel.text = "\(t1) / \(t2) / \(t3)"
+                }
+                
             default:
                 navigationItem.title = "Training Trial"
                 
                 if let tsThres = g_currentUser?.tsThres{
                     tibShockThres.text = "Threshold: " + String(format: "%.2f", tsThres) + "G"
+                }
+                
+                if let tt = totalTime{
+                    timeAccessoryLabel.text = String(format: "%.02d", tt/60)+":"+String(format: "%.02d", tt%60)
                 }
             }
         }
@@ -71,9 +100,10 @@ class TrialViewController: UIViewController {
         DataCalculator.shared.dataCalculatorDelegate = self
     }
     
-//    @objc func testingBtnPressed() {
-//        self.unexpectedDisconnect()
-//    }
+    // For testing
+    //    @objc func testingBtnPressed() {
+    //        self.unexpectedDisconnect()
+    //    }
     
     override func viewWillAppear(_ animated: Bool) {
         self.isInitial = true
@@ -83,7 +113,7 @@ class TrialViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
         hud?.hide(true, afterDelay: 2)
-
+        
         _ = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
@@ -137,6 +167,8 @@ extension TrialViewController{
         let minuteTime = time / 60
         let secondTime = time % 60
         self.timeLabel.text = String(format: "%02d", minuteTime) + ":" + String(format: "%02d", secondTime)
+        
+        
     }
     
     @IBAction func finishBtnPressed(_ sender: Any) {
@@ -148,12 +180,15 @@ extension TrialViewController{
         // 1. save
         if let start = self.startingTime,
             let user = g_currentUser,
-            let type = self.type{
+            let type = self.type,
+            let fbt1 = self.fbt1,
+            let nofbt = self.nofbt,
+            let fbt2 = self.fbt2{
             let userNum = user.num
             let recordNum = Int64(start.timeIntervalSince1970)
             let startTime = start
             
-            DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type)
+            DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type, fbt1: Int64(fbt1), nofbt: Int64(nofbt), fbt2: Int64(fbt2))
         }
         
         // 2. pop
@@ -204,22 +239,25 @@ extension TrialViewController: SensorManagerToTrialDelegate{
         self.timer.invalidate()
         periController.stopSensorRead()
         DataCollector.shared.stopSensorRead()
-
+        
         // present notification & ask whether to save record
         UINotificationFeedbackGenerator().notificationOccurred(.error)
         
         let alert = UIAlertController(title: "Sensor Disconnected", message: "An unexpected disconnection event happens. Please reconnect the sensor.\n Would you like to save record?", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
             
             if let start = self.startingTime,
                 let user = g_currentUser,
-                let type = self.type{
+                let type = self.type,
+                let fbt1 = self.fbt1,
+                let nofbt = self.nofbt,
+                let fbt2 = self.fbt2{
                 let userNum = user.num
                 let recordNum = Int64(start.timeIntervalSince1970)
                 let startTime = start
                 
-                DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type)
+                DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type, fbt1: Int64(fbt1), nofbt: Int64(nofbt), fbt2: Int64(fbt2))
             }
             
             self.navigationController?.popViewController(animated: true)

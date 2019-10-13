@@ -25,6 +25,11 @@ class NewTrialTableViewController: UITableViewController{
     
     var disconnectedPeripheral: String = ""
     
+    var fbt1: Int?
+    var nofbt: Int?
+    var fbt2: Int?
+    var totalTime: Int?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         SensorManager.shared.delegate = self
@@ -44,6 +49,8 @@ class NewTrialTableViewController: UITableViewController{
                 navigationItem.title = "Baseline Test"
             case "new":
                 navigationItem.title = "New Trial"
+            case "feedback":
+                navigationItem.title = "Feedback Time Trial"
             default:
                 break
             }
@@ -152,6 +159,10 @@ class NewTrialTableViewController: UITableViewController{
         case "toTrialSegue":
             let newVC = segue.destination as! TrialViewController
             newVC.type = sender as? String
+            newVC.fbt1 = self.fbt1
+            newVC.fbt2 = self.fbt2
+            newVC.nofbt = self.nofbt
+            newVC.totalTime = self.totalTime
         default:
             break
         }

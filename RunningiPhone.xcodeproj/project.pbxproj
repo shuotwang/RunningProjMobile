@@ -258,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */,
-				BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */,
 				BF95C9442341E08600DD0482 /* FeedbackTimeSettingViewController.swift */,
+				BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */,
 				BF1D56C4233493BA00D771AE /* TrialViewController.swift */,
 			);
 			path = "New Trial";

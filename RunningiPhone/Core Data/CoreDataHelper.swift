@@ -148,7 +148,10 @@ extension CoreDataHelper {
                           gyrZ: [Double],
                           tibShock: [Double],
                           tibShockPos: [Double],
-                          cadence: [Int]){
+                          cadence: [Int],
+                          fbt1: Int64,
+                          nofbt: Int64,
+                          fbt2: Int64){
         let record = NSEntityDescription.insertNewObject(forEntityName: "Record", into: context) as! Record
         
         record.userNum = userNum
@@ -170,6 +173,10 @@ extension CoreDataHelper {
         record.tibShock = tibShock
         record.tibShockPos = tibShockPos
         record.cadence = cadence
+        
+        record.fb1 = fbt1
+        record.nofb = nofbt
+        record.fb2 = fbt2
         
         saveContext()
     }

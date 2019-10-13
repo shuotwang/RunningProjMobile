@@ -561,14 +561,14 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ips-F5-kwt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="181.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOT-n0-XE0">
-                                        <rect key="frame" x="0.0" y="145" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="181.5" width="414" height="181"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zP6-hs-l1i">
-                                                <rect key="frame" x="20" y="5" width="374" height="135"/>
+                                                <rect key="frame" x="20" y="5" width="374" height="171"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <state key="normal" title="Baseline Test">
                                                     <color key="titleColor" red="1" green="0.1857388616" blue="0.57339501380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -587,10 +587,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QU-R3-i4K">
-                                        <rect key="frame" x="0.0" y="290" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="362.5" width="414" height="181.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5u-hy-Zc0">
-                                                <rect key="frame" x="20" y="5" width="374" height="135"/>
+                                                <rect key="frame" x="20" y="5" width="374" height="171.5"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                                 <state key="normal" title="New Trial">
                                                     <color key="titleColor" red="0.86274509799999999" green="0.7843137255" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -608,30 +608,8 @@
                                             <constraint firstAttribute="trailing" secondItem="w5u-hy-Zc0" secondAttribute="trailing" constant="20" id="uhn-gQ-4QG"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zXT-Eh-chd">
-                                        <rect key="frame" x="0.0" y="435" width="414" height="145"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtT-Sd-4pb">
-                                                <rect key="frame" x="20" y="5" width="374" height="135"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                                <state key="normal" title="Feedback Time Trial">
-                                                    <color key="titleColor" red="0.86274509799999999" green="0.7843137255" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="fbBtnPressed:" destination="ERj-Ez-cJ1" eventType="touchUpInside" id="F8d-g6-QrO"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="RtT-Sd-4pb" secondAttribute="bottom" constant="5" id="8Br-Ck-xa9"/>
-                                            <constraint firstItem="RtT-Sd-4pb" firstAttribute="leading" secondItem="zXT-Eh-chd" secondAttribute="leading" constant="20" id="DIm-9P-RcI"/>
-                                            <constraint firstAttribute="trailing" secondItem="RtT-Sd-4pb" secondAttribute="trailing" constant="20" id="Nde-AZ-kxC"/>
-                                            <constraint firstItem="RtT-Sd-4pb" firstAttribute="top" secondItem="zXT-Eh-chd" secondAttribute="top" constant="5" id="aZp-hs-Odr"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9P-WE-qvW">
-                                        <rect key="frame" x="0.0" y="580" width="414" height="145"/>
+                                        <rect key="frame" x="0.0" y="544" width="414" height="181"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -649,7 +627,6 @@
                     <navigationItem key="navigationItem" id="C9e-Uq-S68"/>
                     <connections>
                         <outlet property="baselineTestBtn" destination="zP6-hs-l1i" id="aDo-0K-ocJ"/>
-                        <outlet property="fbTrialBtn" destination="RtT-Sd-4pb" id="fxE-Kf-Vfg"/>
                         <outlet property="newTrialBtn" destination="w5u-hy-Zc0" id="Fub-2M-gdd"/>
                         <segue destination="Q1p-jX-GPj" kind="show" identifier="toConnectSegue" id="8fy-mD-B78"/>
                         <segue destination="b1D-tr-UHD" kind="show" identifier="toFbSettingSegue" id="JFs-9R-he6"/>
@@ -723,7 +700,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7v0-wv-U8x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="-1483"/>
+            <point key="canvasLocation" x="2836" y="-1071"/>
         </scene>
         <!--Feedback Time Setting View Controller-->
         <scene sceneID="Yze-Zw-ix6">
@@ -736,10 +713,13 @@
                         <viewLayoutGuide key="safeArea" id="bsB-Ll-fhX"/>
                     </view>
                     <navigationItem key="navigationItem" id="eTO-Ij-bY6"/>
+                    <connections>
+                        <segue destination="Q1p-jX-GPj" kind="show" identifier="fbTimeToConnectionSegue" id="gVp-fP-UCk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oNN-vb-swq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="-790"/>
+            <point key="canvasLocation" x="2059" y="-1485"/>
         </scene>
         <!--Trial View Controller-->
         <scene sceneID="XkU-RQ-iq6">
@@ -773,12 +753,15 @@
                                                                 <color key="textColor" red="0.86274509803921573" green="0.78431372549019607" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwK-9e-Tgj">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nh-hf-oKH">
                                                                 <rect key="frame" x="0.0" y="130" width="374" height="26.5"/>
-                                                            </view>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="lwK-9e-Tgj" firstAttribute="height" secondItem="Zz9-xi-WuC" secondAttribute="height" id="5X4-GC-vyf"/>
+                                                            <constraint firstItem="3nh-hf-oKH" firstAttribute="height" secondItem="Zz9-xi-WuC" secondAttribute="height" id="GXI-JG-vh3"/>
                                                             <constraint firstItem="bEB-M4-rWG" firstAttribute="height" secondItem="Zz9-xi-WuC" secondAttribute="height" multiplier="4" id="HJu-Cr-E7Z"/>
                                                         </constraints>
                                                     </stackView>
@@ -962,18 +945,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GP1-s6-YOq"/>
                     </view>
+                    <navigationItem key="navigationItem" id="PkT-nW-Vkt"/>
                     <connections>
                         <outlet property="cadLabel" destination="1qg-O8-WoS" id="LXm-IC-8M5"/>
                         <outlet property="finishBtn" destination="Lk3-25-LWg" id="RWb-W9-fyD"/>
                         <outlet property="startBtn" destination="RFX-ae-6zK" id="Bix-Ad-GWJ"/>
                         <outlet property="tibShockLabel" destination="I80-nV-7l0" id="5Cx-Fm-peb"/>
                         <outlet property="tibShockThres" destination="pfr-Nl-qkN" id="kZ5-qK-hUA"/>
+                        <outlet property="timeAccessoryLabel" destination="3nh-hf-oKH" id="M39-qv-0y0"/>
                         <outlet property="timeLabel" destination="bEB-M4-rWG" id="hLf-cE-83A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odO-qi-x5i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2939.130434782609" y="-1066.0714285714284"/>
+            <point key="canvasLocation" x="3674" y="-1071"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ZMG-JB-klA">
@@ -1051,4 +1036,7 @@
             <point key="canvasLocation" x="3105.7971014492755" y="1041.9642857142858"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gVp-fP-UCk"/>
+    </inferredMetricsTieBreakers>
 </document>

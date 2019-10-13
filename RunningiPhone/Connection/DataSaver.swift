@@ -46,7 +46,7 @@ class DataSaver {
         self.gyrZs.append(contentsOf: gyrZs)
     }
     
-    func doFinalSave(userNum: Int64, recordNum: Int64, time: Date, duration: Int64, type: String) {
+    func doFinalSave(userNum: Int64, recordNum: Int64, time: Date, duration: Int64, type: String, fbt1: Int64, nofbt: Int64, fbt2: Int64) {
         // 1. Save data to CoreData
         CoreDataHelper.shared.createRecordWith(userNum: userNum,
                                                recordNum: recordNum,
@@ -63,10 +63,12 @@ class DataSaver {
                                                gyrZ: gyrZs,
                                                tibShock: tsRecord,
                                                tibShockPos: tsPosRecord,
-                                               cadence: cadRecord)
+                                               cadence: cadRecord,
+                                               fbt1: fbt1,
+                                               nofbt: nofbt,
+                                               fbt2: fbt2)
         
         // 2. Cal Ts threshold and save to user default
-        print(type)
         if type == "baseline"{
             let tsThres = DataCalculator.shared.calTsThres(tsRecord: tsRecord) * 0.8
             UserDefaults.standard.set(tsThres, forKey: "tsThres")

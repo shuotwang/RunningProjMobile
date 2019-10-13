@@ -57,3 +57,11 @@ extension Date{
         return Double(millisecond)
     }
 }
+
+extension String {
+    var findNumber: String {
+        let pattern = UnicodeScalar("0")..."9"
+        return String(unicodeScalars
+            .flatMap { pattern ~= $0 ? Character($0) : nil })
+    }
+}

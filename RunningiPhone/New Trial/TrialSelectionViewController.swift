@@ -14,7 +14,6 @@ class TrialSelectionViewController: UIViewController {
     
     @IBOutlet weak var baselineTestBtn: UIButton!
     @IBOutlet weak var newTrialBtn: UIButton!
-    @IBOutlet weak var fbTrialBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,11 +65,6 @@ class TrialSelectionViewController: UIViewController {
     
     @IBAction func newTrialBtnPressed(_ sender: Any) {
         let type = "new"
-        performSegue(withIdentifier: "toConnectSegue", sender: type)
-    }
-    
-    @IBAction func fbBtnPressed(_ sender: Any) {
-        let type = ""
         performSegue(withIdentifier: "toFbSettingSegue", sender: type)
     }
     
@@ -81,6 +75,7 @@ class TrialSelectionViewController: UIViewController {
             nv.trialType = sender as? String
         case "toFbSettingSegue":
             let nv = segue.destination as! FeedbackTimeSettingViewController
+            nv.trialType = sender as? String
         default:
             break
         }
