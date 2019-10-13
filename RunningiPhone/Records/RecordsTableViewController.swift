@@ -40,6 +40,8 @@ class RecordsTableViewController: UITableViewController {
             return 200
         case 2:
             return 49
+        case 3:
+            return 49
         default:
             return 0
         }
@@ -52,6 +54,8 @@ class RecordsTableViewController: UITableViewController {
         case 1:
             return "Details"
         case 2:
+            return "Feedback Time"
+        case 3:
             return "Data Export"
         default:
             return "Nothing"
@@ -60,7 +64,7 @@ class RecordsTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         if self.selectedRecordIdx != nil {
-            return 3
+            return 4
         }
         else{
             return 1
@@ -74,6 +78,8 @@ class RecordsTableViewController: UITableViewController {
         case 1:
             return 1
         case 2:
+            return 2
+        case 3:
             return 3
         default:
             return 0
@@ -104,6 +110,25 @@ class RecordsTableViewController: UITableViewController {
             
             cell = detailCell
         case 2:
+            cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+            if let records = self.records,
+                let selectedIdx = self.selectedRecordIdx{
+                let record = records[selectedIdx]
+                if indexPath.row == 0{
+                    cell.textLabel?.textColor = .white
+                    cell.textLabel?.isUserInteractionEnabled = false
+                    cell.textLabel?.text = "No Feedback From"
+                    cell.detailTextLabel?.text = String(format: "%.02d", record.fb1/60)+":"+String(format: "%.02d", record.fb1%60)
+                }
+                else if indexPath.row == 1 {
+                    cell.textLabel?.textColor = .white
+                    cell.isUserInteractionEnabled = false
+                    cell.textLabel?.text = "Feedback Resume at"
+                    cell.detailTextLabel?.text = String(format: "%.02d", (record.fb1+record.nofb)/60)+":"+String(format: "%.02d", (record.fb1+record.nofb)%60)
+                }
+            }
+
+        case 3:
             if indexPath.row == 0 {
                 cell.textLabel?.text = "Export IMU Record"
             }else if indexPath.row == 1{
@@ -124,7 +149,7 @@ class RecordsTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         
         switch indexPath.section{
-        case 2:
+        case 3:
             
             if indexPath.row == 0{
                 if let records = self.records,

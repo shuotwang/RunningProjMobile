@@ -14,7 +14,7 @@ class DataExporter {
         
         let fileName = fileName + "_" + String(userNum) + "_Imu.csv"
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
-        var csvText = "accTimeStamp,accX,accY,accZ,gyrTimeStamp,gyrX,gyrY,gyrZ\n"
+        var csvText = "accTimeStamp,accX,accY,accZ,gyrTimeStamp,gyrX,gyrY,gyrZ,fbOn\n"
         
         if let gyrTimeStamp = gyrTimeStamp,
         let gyrXs = gyrXs,
