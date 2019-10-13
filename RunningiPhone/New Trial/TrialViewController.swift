@@ -22,6 +22,7 @@ class TrialViewController: UIViewController {
     @IBOutlet weak var timeAccessoryLabel: UILabel!
     
     var totalTime: Int?
+    var isFbEnabled = true
     
     var time = 0
     var isPaused = true
@@ -168,7 +169,24 @@ extension TrialViewController{
         let secondTime = time % 60
         self.timeLabel.text = String(format: "%02d", minuteTime) + ":" + String(format: "%02d", secondTime)
         
-        
+        if let fbt1 = fbt1,
+            let nofbt = nofbt{
+            let time2 = fbt1 + nofbt
+            if time == fbt1 {
+                tibShockLabel.isHidden = true
+                tibShockThres.text = "No Feedback"
+                cadLabel.isHidden = true
+                isFbEnabled = false
+            }else if time == time2{
+                tibShockLabel.isHidden = false
+                if let tsThres = g_currentUser?.tsThres{
+                    tibShockThres.text = "Threshold: " + String(format: "%.2f", tsThres) + "G"
+                }
+                cadLabel.isHidden = false
+                isFbEnabled = true
+                
+            }
+        }
     }
     
     @IBAction func finishBtnPressed(_ sender: Any) {
@@ -203,7 +221,7 @@ extension TrialViewController: DataCalculatorDelegate{
             self.tibShockLabel.text = String(format: "%.2f", tibShock) + "G"
             
             if let tsThres = g_currentUser?.tsThres{
-                if tsThres != 0 && tibShock > tsThres && g_isAudioOn && type == "new"{
+                if isFbEnabled && tsThres != 0 && tibShock > tsThres && g_isAudioOn && (type == "new" || type == "feedback"){
                     playTsAudio()
                 }
             }
