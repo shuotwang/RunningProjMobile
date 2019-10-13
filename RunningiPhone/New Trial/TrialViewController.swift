@@ -87,7 +87,7 @@ class TrialViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        g_isConnected = false
+        g_isConnected = false
         navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.tabBar.isHidden = false
         navigationItem.setHidesBackButton(false, animated: true)
@@ -150,32 +150,6 @@ extension TrialViewController{
         
         // 2. pop
         self.navigationController?.popViewController(animated: true)
-        
-//        let alert = UIAlertController(title: "Save Records?", message: "Are you sure to save record?", preferredStyle: .alert)
-//
-//        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-//            // 1. save
-//            if let start = self.startingTime,
-//                let user = g_currentUser,
-//                let type = self.type{
-//                let userNum = user.num
-//                let recordNum = Int64(start.timeIntervalSince1970)
-//                let startTime = start
-//
-//                DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type)
-//            }
-//
-//            // 2. pop
-//            self.navigationController?.popViewController(animated: true)
-//        }))
-//        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
-//            self.navigationController?.popViewController(animated: true)
-//        }))
-//        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { action in
-//            print("Cancelled")
-//        }))
-//
-//        self.present(alert, animated: true)
         
     }
 }
