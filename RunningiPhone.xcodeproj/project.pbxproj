@@ -34,6 +34,7 @@
 		BF95C932233C908B00DD0482 /* msg.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF95C931233C908B00DD0482 /* msg.wav */; };
 		BF95C934233C97C700DD0482 /* DataExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C933233C97C700DD0482 /* DataExporter.swift */; };
 		BF95C940233F5FFA00DD0482 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = BF95C93F233F5FF900DD0482 /* beep.wav */; };
+		BF95C9452341E08600DD0482 /* FeedbackTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95C9442341E08600DD0482 /* FeedbackTimeSettingViewController.swift */; };
 		BFE482F02339D690004FFBD1 /* DataSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE482EF2339D690004FFBD1 /* DataSaver.swift */; };
 		BFF8727D233401DC0017016A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF8727C233401DC0017016A /* AppDelegate.swift */; };
 		BFF87282233401DC0017016A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF87280233401DC0017016A /* Main.storyboard */; };
@@ -83,6 +84,7 @@
 		BF95C931233C908B00DD0482 /* msg.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = msg.wav; sourceTree = "<group>"; };
 		BF95C933233C97C700DD0482 /* DataExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExporter.swift; sourceTree = "<group>"; };
 		BF95C93F233F5FF900DD0482 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
+		BF95C9442341E08600DD0482 /* FeedbackTimeSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTimeSettingViewController.swift; sourceTree = "<group>"; };
 		BFE482EF2339D690004FFBD1 /* DataSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSaver.swift; sourceTree = "<group>"; };
 		BFF87279233401DC0017016A /* RunningiPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunningiPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF8727C233401DC0017016A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			children = (
 				BF4A34972335F1DD009FA99E /* TrialSelectionViewController.swift */,
 				BF1D56C223348A9400D771AE /* NewTrialTableViewController.swift */,
+				BF95C9442341E08600DD0482 /* FeedbackTimeSettingViewController.swift */,
 				BF1D56C4233493BA00D771AE /* TrialViewController.swift */,
 			);
 			path = "New Trial";
@@ -443,6 +446,7 @@
 				BFF8729C233454180017016A /* SwitchTableViewCell.swift in Sources */,
 				BF573E2A2337EE5F0033ADB5 /* SensorManager.swift in Sources */,
 				BF1D56CC2334A15F00D771AE /* RecordsDetailTableViewCell.swift in Sources */,
+				BF95C9452341E08600DD0482 /* FeedbackTimeSettingViewController.swift in Sources */,
 				BF573E4F23386F310033ADB5 /* DataCalculator.swift in Sources */,
 				BF4A34982335F1DD009FA99E /* TrialSelectionViewController.swift in Sources */,
 				BF573E25233733A10033ADB5 /* NewUserTableViewController.swift in Sources */,

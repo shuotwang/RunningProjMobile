@@ -228,6 +228,7 @@ extension TrialViewController: SensorManagerToTrialDelegate{
     }
     
     func playDisconnectAudio(){
+        
         let url = Bundle.main.url(forResource: "beep", withExtension: "wav")!
         
         do {
