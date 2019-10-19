@@ -185,4 +185,23 @@ extension RecordsTableViewController: RecordsSummaryDelegate {
         self.selectedRecordIdx = index
         self.tableView.reloadData()
     }
+    
+    func deleteRecord(with recordNum: Int64) {
+        let alert = UIAlertController(title: "Delete Record", message: "Are you sure to delete record?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            CoreDataHelper.shared.deleteRecordWith(recordNum: recordNum)
+            
+            if let user = g_currentUser {
+                self.records = CoreDataHelper.shared.findRecordsWith(userNum: user.num)
+            }
+            self.selectedRecordIdx = nil
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { action in
+            print("No")
+        }))
+        
+        self.present(alert, animated: true)
+    }
 }

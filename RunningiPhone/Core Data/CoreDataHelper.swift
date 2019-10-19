@@ -187,7 +187,7 @@ extension CoreDataHelper {
     }
     
     func deleteRecordWith(recordNum: Int64) {
-        let fetchRequest: NSFetchRequest = User.fetchRequest()
+        let fetchRequest: NSFetchRequest = Record.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "recordNum == %d", recordNum)
         do {
             let records = try context.fetch(fetchRequest)

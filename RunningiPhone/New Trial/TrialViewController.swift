@@ -87,7 +87,7 @@ class TrialViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-//        g_isConnected = false
+        g_isConnected = false
         navigationController?.navigationBar.prefersLargeTitles = true
         tabBarController?.tabBar.isHidden = false
         navigationItem.setHidesBackButton(false, animated: true)
