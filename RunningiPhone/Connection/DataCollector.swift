@@ -80,6 +80,15 @@ class DataCollector {
     
     func stopSensorRead() {
         timer.invalidate()
+        accTimeStamp = [Double]()
+        accXs = [Double]()
+        accYs = [Double]()
+        accZs = [Double]()
+        
+        gyrTimeStamp = [Double]()
+        gyrXs = [Double]()
+        gyrYs = [Double]()
+        gyrZs = [Double]()
     }
     
     func passAccToCal(accTimeStamp: [Double], accXs: [Double], accYs: [Double], accZs: [Double]){
