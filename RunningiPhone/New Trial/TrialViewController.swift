@@ -215,6 +215,16 @@ extension TrialViewController: DataCalculatorDelegate{
 extension TrialViewController: SensorManagerToTrialDelegate{
     func unexpectedDisconnect() {
         
+        if let start = self.startingTime,
+            let user = g_currentUser,
+            let type = self.type{
+            let userNum = user.num
+            let recordNum = Int64(start.timeIntervalSince1970)
+            let startTime = start
+            
+            DataSaver.shared.doFinalSave(userNum: userNum, recordNum: recordNum, time: startTime, duration: Int64(self.time), type: type)
+        }
+        
         playDisconnectAudio()
         UINotificationFeedbackGenerator().notificationOccurred(.error)
         
